@@ -314,6 +314,7 @@ a#back-to-top {
     font-size: 1.5em;
     font-weight: 400;
     z-index: 1000;
+    transition: all .1s ease-in-out;
 }
 
 a#back-to-top:hover {
