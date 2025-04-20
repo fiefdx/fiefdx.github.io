@@ -3,14 +3,463 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <script src="scripts.js"></script>
-  <title>Website Under Construction</title>
+  <title>Web Development Tutorials</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+  <link rel="stylesheet" href="css/fix.css">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="js/script.js"></script>
+  <script>hljs.highlightAll();</script>
 </head>
 <body>
-  <div class="container">
-    <h1>Website Under Construction</h1>
-    <p>We're currently working on our website. Please check back soon!</p>
+  <header id="top">
+    <h1>Web Development Tutorials</h1>
+    <nav>
+      <ul>
+        <li class="selected"><a href="index.html">HTML Cheat Sheet</a></li>
+        <li><a href="css.html">CSS Cheat Sheet</a></li>
+        <li><a href="js.html">JS Cheat Sheet</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <header>
+      <section>
+        <h1>HTML Cheat Sheet</h1>
+        <h2>for beginners</h2>
+        <div class="author">
+          <h3>wrote at 2025-04-07 by</h3>
+          <div class="avatar">
+            <img src="image/fiefdx.png">
+            <span>fiefdx</span>
+          <div>
+        </div>
+      </section>
+    </header>
+      
+    <article>
+      <aside id="index">
+        <h2>Content Index</h2>
+        <div class="index">
+          <h4>Basic Structure</h4>
+          <ul>
+            <li><a href="#html-structure">HTML document structure</a></li>
+            <li><a href="#head-structure">Head structure</a></li>
+            <li><a href="#body-structure">Body structure</a></li>
+          </ul>
+          <h4>Common HTML Elements</h4>
+          <ol>
+            <li><a href="#html"><code>&lt;html&gt;</code></a></li>
+            <li><a href="#head"><code>&lt;head&gt;</code></a></li>
+            <li><a href="#body"><code>&lt;body&gt;</code></a></li>
+            <li><a href="#meta"><code>&lt;meta&gt;</code></a></li>
+            <li><a href="#title"><code>&lt;title&gt;</code></a></li>
+            <li><a href="#link"><code>&lt;link&gt;</code></a></li>
+            <li><a href="#script"><code>&lt;script&gt;</code></a></li>
+            <li><a href="#style"><code>&lt;style&gt;</code></a></li>
+            <li><a href="#header"><code>&lt;header&gt;</code></a></li>
+            <li><a href="#nav"><code>&lt;nav&gt;</code></a></li>
+            <li><a href="#main"><code>&lt;main&gt;</code></a></li>
+            <li><a href="#article"><code>&lt;article&gt;</code></a></li>
+            <li><a href="#section"><code>&lt;section&gt;</code></a></li>
+            <li><a href="#footer"><code>&lt;footer&gt;</code></a></li>
+            <li><a href="#comment"><code>&lt;!-- comment --&gt;</code></a></li>
+            <li><a href="#p"><code>&lt;p&gt;</code></a></li>
+            <li><a href="#h1-h6"><code>&lt;h1&gt; to &lt;h6&gt;</code></a></li>
+            <li><a href="#span"><code>&lt;span&gt;</code></a></li>
+            <li><a href="#strong"><code>&lt;strong&gt;</code></a></li>
+            <li><a href="#em"><code>&lt;em&gt;</code></a></li>
+            <li><a href="#b"><code>&lt;b&gt;</code></a></li>
+            <li><a href="#i"><code>&lt;i&gt;</code></a></li>
+            <li><a href="#u"><code>&lt;u&gt;</code></a></li>
+            <li><a href="#s"><code>&lt;s&gt;</code></a></li>
+            <li><a href="#code"><code>&lt;code&gt;</code></a></li>
+            <li><a href="#pre"><code>&lt;pre&gt;</code></a></li>
+            <li><a href="#sup"><code>&lt;sup&gt;</code></a></li>
+            <li><a href="#sub"><code>&lt;sub&gt;</code></a></li>
+            <li><a href="#a"><code>&lt;a&gt;</code></a></li>
+            <li><a href="#img"><code>&lt;img&gt;</code></a></li>
+            <li><a href="#blockquote"><code>&lt;blockquote&gt;</code></a></li>
+            <li><a href="#cite"><code>&lt;cite&gt;</code></a></li>
+            <li><a href="#ul"><code>&lt;ul&gt;</code></a></li>
+            <li><a href="#ol"><code>&lt;ol&gt;</code></a></li>
+            <li><a href="#li"><code>&lt;li&gt;</code></a></li>
+            <li><a href="#table"><code>&lt;table&gt;</code></a></li>
+            <li><a href="#th"><code>&lt;th&gt;</code></a></li>
+            <li><a href="#tr"><code>&lt;tr&gt;</code></a></li>
+            <li><a href="#td"><code>&lt;td&gt;</code></a></li>
+            <li><a href="#form"><code>&lt;form&gt;</code></a></li>
+            <li><a href="#input"><code>&lt;input&gt;</code></a></li>
+            <li><a href="#textarea"><code>&lt;textarea&gt;</code></a></li>
+            <li><a href="#button"><code>&lt;button&gt;</code></a></li>
+            <li><a href="#label"><code>&lt;label&gt;</code></a></li>
+            <li><a href="#div"><code>&lt;div&gt;</code></a></li>
+            <li><a href="#br"><code>&lt;br&gt;</code></a></li>
+            <li><a href="#hr"><code>&lt;hr&gt;</code></a></li>
+          </ol>
+        </div>
+      </aside>
+
+      <section id="html-structure">
+        <h2>HTML</h2>
+        <pre><code class='language-html' lang='html'>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    head content goes here.
+  &lt;/head&gt;
+  &lt;body&gt;
+    body content goes here.
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <p id="html"><code class="tag">&lt;html&gt;</code> tag represents the root of an HTML document.</p>
+        <p id="head"><code class="tag">&lt;head&gt;</code> is a container for metadata and is placed between the <code  class="tag">&lt;html&gt;</code> tag and the <code  class="tag">&lt;body&gt;</code> tag.</p>
+        <p id="body"><code class="tag">&lt;body&gt;</code> tag defines the document&#39;s body, contains all the contents of an HTML document. There can only be one <code  class="tag">&lt;body&gt;</code> element in an HTML document.</p>
+      </section>
+
+      <section id="head-structure">
+        <h2>Head</h2>
+        <pre><code class='language-html' lang='html'>&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Document Title&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/styles.css&quot;&gt;
+  ...
+  &lt;script src=&quot;/path/to/scripts.js&quot;&gt;&lt;/script&gt;
+  ...
+  &lt;style&gt;
+    body {
+      padding: 0px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+        <p id="meta"><code class="tag">&lt;meta&gt;</code> defines metadata about an HTML document. Always go inside the <code class="tag">&lt;head&gt;</code> element.</p>
+        <p id="title"><code class="tag">&lt;title&gt;</code> defines the title of the document. It is shown in the browser&#39;s title bar or in the page&#39;s tab.</p>
+        <p id="link"><code class="tag">&lt;link&gt;</code> is most often used to link to external style sheets or to add a favicon to your website.</p>
+        <p id="script"><code class="tag">&lt;script&gt;</code> is used to embed a client-side script (JavaScript). It either  contains scripting statements, or it points to an external script file through the src attribute.</p>
+        <p id="style"><code class="tag">&lt;style&gt;</code> is used to define style information (CSS) for a document.</p>
+      </section>
+
+      <section id="body-structure">
+        <h2>Body</h2>
+        <pre><code class='language-html' lang='html'>&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Title&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+  &lt;main&gt;
+    &lt;article&gt;
+      &lt;section&gt;
+        &lt;h2&gt;Section Title&lt;/h2&gt;
+        &lt;p&gt;This is a paragraph.&lt;/p&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;h2&gt;Section Title&lt;/h2&gt;
+        &lt;p&gt;This is another paragraph.&lt;/p&gt;
+      &lt;/section&gt;
+      ...
+    &lt;/article&gt;
+  &lt;/main&gt;
+  &lt;footer&gt;
+    &lt;!-- &lt;p&gt;Footer content goes here.&lt;/p&gt; --&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+        <p id="header"><code class="tag">&lt;header&gt;</code> represents a container for introductory content or a set of navigational links.</p>
+        <p id="nav"><code class="tag">&lt;nav&gt;</code> defines a set of navigation links.</p>
+        <p id="main"><code class="tag">&lt;main&gt;</code> specifies the main content of a document.</p>
+        <p id="article"><code class="tag">&lt;article&gt;</code> specifies independent, self-contained content.</p>
+        <p id="section"><code class="tag">&lt;section&gt;</code> defines a section in a document.</p>
+        <p id="footer"><code class="tag">&lt;footer&gt;</code> defines a footer for a document or section.</p>
+        <p id="comment"><code class="tag">&lt;!-- comment --&gt;</code> is used to insert comments in the source code of html document.</p>
+      </section>
+
+      <section>
+        <h2>Common HTML Elements</h2>
+        <p id="p"><code class="tag">&lt;p&gt;</code> defines a paragraph.</p>
+        <pre><code class='language-html' lang='html'>&lt;p&gt;This is a paragraph&lt;/p&gt;</code></pre>
+        <p>&nbsp;</p>
+        <p id="h1-h6"><code class="tag">&lt;h1&gt; to &lt;h6&gt;</code> are used to define HTML headings.</p>
+        <pre><code class='language-html' lang='html'>&lt;h1&gt;H1&lt;/h1&gt;
+&lt;h2&gt;H2&lt;/h2&gt;
+&lt;h3&gt;H3&lt;/h3&gt;
+&lt;h4&gt;H4&lt;/h4&gt;
+&lt;h5&gt;H5&lt;/h5&gt;
+&lt;h6&gt;H6&lt;/h6&gt;</code></pre>
+        <div class="example">
+          <h1>H1</h1>
+          <h2>H2</h2>
+          <h3>H3</h3>
+          <h4>H4</h4>
+          <h5>H5</h5>
+          <h6>H6</h6>
+        </div>
+        <p>&nbsp;</p>
+        <p id="span"><code class="tag">&lt;span&gt;</code> is an inline container used to mark up a part of a text, or a part of a document.</p>
+        <pre><code class='language-html' lang='html'>&lt;p&gt;This is a &lt;span style=&quot;color:red;&quot;&gt;paragraph&lt;/span&gt;&lt;/p&gt;</code></pre>
+        <div class="example">
+          <p>This is a <span style="color: red;">paragraph</span></p>
+        </div>
+        <p>&nbsp;</p>
+        <p id="strong"><code class="tag">&lt;strong&gt;</code> is used to define text with strong importance. The content inside is typically displayed in bold.</p>
+        <pre><code class='language-html' lang='html'>&lt;p&gt;This is a &lt;strong&gt;strong&lt;/strong&gt; tag&lt;/p&gt;</code></pre>
+        <div class="example">
+          <p>This is a <strong>strong</strong> tag</p>
+        </div>
+        <p>&nbsp;</p>
+        <p id="em"><code class="tag">&lt;em&gt;</code> is used to define emphasized text. The content inside is typically displayed in italic.</p>
+        <pre><code class='language-html' lang='html'>&lt;p&gt;this is a &lt;em&gt;emphasized&lt;/em&gt; tag&lt;/p&gt;</code></pre>
+        <div class="example">
+          <p>this is a <em>emphasized</em> tag</p>
+        </div>
+        <p>&nbsp;</p>
+        <p id="b"><code class="tag">&lt;b&gt;</code> specifies bold text without any extra importance.</p>
+        <pre><code class='language-html' lang='html'>&lt;p&gt;This is a &lt;b&gt;bold&lt;/b&gt; tag&lt;/p&gt;</code></pre>
+        <div class="example">
+          <p>This is a <b>bold</b> tag</p>
+        </div>
+        <p>&nbsp;</p>
+        <p id="i"><code class="tag">&lt;i&gt;</code>  content inside is typically displayed in italic.</p>
+        <pre><code class='language-html' lang='html'>&lt;p&gt;This is a &lt;i&gt;italic&lt;/i&gt; tag&lt;/p&gt;</code></pre>
+        <div class="example">
+          <p>This is a <i>italic</i> tag</p>
+        </div>
+        <p>&nbsp;</p>
+        <p id="u"><code class="tag">&lt;u&gt;</code> content inside is typically displayed with an underline.</p>
+        <pre><code class='language-html' lang='html'>&lt;p&gt;This is a &lt;u&gt;underline&lt;/u&gt; tag&lt;/p&gt;</code></pre>
+        <div class="example">
+          <p>This is a <u>underline</u> tag</p>
+        </div>
+        <p>&nbsp;</p>
+        <p id="s"><code class="tag">&lt;s&gt;</code> text will be displayed with a line through it.</p>
+        <pre><code class='language-html' lang='html'>&lt;p&gt;This is a &lt;s&gt;line through&lt;/s&gt; tag&lt;/p&gt;</code></pre>
+        <div class="example">
+          <p>This is a <s>line through</s> tag</p>
+        </div>
+        <p>&nbsp;</p>
+        <p id="code"><code class="tag">&lt;code&gt;</code> is used to define a piece of computer code. The content inside is displayed in the browser&#39;s default monospace font.</p>
+        <pre><code class='language-html' lang='html'>&lt;pre&gt;&lt;code&gt;
+// this is a javascript code snip
+for (let i = 0; i &lt; 10; i++) {
+    console.log(i);
+}&lt;/code&gt;&lt;/pre&gt;</code></pre>
+        <div class="example">
+          <pre><code class='language-js'>// this is a javascript code snip
+for (let i = 0; i < 10; i++) {
+    console.log(i);
+}</code></pre>
+        </div>
+        <p>&nbsp;</p>
+        <p id="pre"><code class="tag">&lt;pre&gt;</code> is displayed in a fixed-width font.</p>
+        <pre><code class='language-html' lang='html'>&lt;pre&gt;Some fixed-width words&lt;/pre&gt;</code></pre>
+        <div class="example">
+          <pre>Some fixed-width words</pre>
+        </div>
+        <p>&nbsp;</p>
+        <p id="sup"><code class="tag">&lt;sup&gt;</code> defines superscript text.</p>
+        <pre><code class='language-html' lang='html'>&lt;p&gt;2&lt;sup&gt;2&lt;/sup&gt;=4&lt;/p&gt;</code></pre>
+        <div class="example">
+          <p>2<sup>2</sup>=4</p>
+        </div>
+        <p>&nbsp;</p>
+        <p id="sub"><code class="tag">&lt;sub&gt;</code> defines subscript text.</p>
+        <pre><code class='language-html' lang='html'>&lt;p&gt;a&lt;sub&gt;2&lt;/sub&gt;=?&lt;/p&gt;</code></pre>
+        <div class="example">
+          <p>a<sub>2</sub>=?</p>
+        </div>
+        <p>&nbsp;</p>
+        <p id="a"><code class="tag">&lt;a href=&quot;URL&quot;&gt;</code> defines a hyperlink, witch is used to link from one page to another.</p>
+        <pre><code class='language-html' lang='html'>&lt;a href=&quot;/url/to/another/page&quot; target=&quot;_blank&quot;&gt;</code></pre>
+        <div class="example">
+          <a href="https://github.com/fiefdx" target="_blank">this is a test link</a>
+        </div>
+        <p>&nbsp;</p>
+        <p id="img"><code class="tag">&lt;img src=&quot;URL&quot; alt=&quot;description&quot;&gt;</code> is used to embed an image in an HTML page.</p>
+        <pre><code class='language-html' lang='html'>&lt;img src=&quot;/url/to/remote/image&quot; alt=&quot;description&quot;&gt;</code></pre>
+        <div class="example">
+          <img src="image/fiefdx.png" alt="avatar image" style="width: 150px; height: 150px;">
+        </div>
+        <p>&nbsp;</p>
+        <p id="blockquote"><code class="tag">&lt;blockquote&gt;</code> specifies a section that is quoted from another source.</p>
+        <pre><code class='language-html' lang='html'>&lt;blockquote cite=&quot;https://github.com&quot;&gt;https://github.com&lt;/blockquote&gt;</code></pre>
+        <div class="example">
+          <blockquote cite="https://github.com">https://github.com</blockquote>
+        </div>
+        <p>&nbsp;</p>
+        <p id="cite"><code class="tag">&lt;cite&gt;</code> defines the title of a creative work.</p>
+        <pre><code class='language-html' lang='html'>&lt;p&gt;&lt;cite&gt;Some web site&lt;/cite&gt; by David.&lt;/p&gt;</code></pre>
+        <div class="example">
+          <p><cite>Some web site</cite> by David.</p>
+        </div>
+        <p>&nbsp;</p>
+        <p id="ul"><code class="tag">&lt;ul&gt;</code> defines an unordered (bulleted) list.</p>
+        <p id="ol"><code class="tag">&lt;ol&gt;</code> defines an ordered list.</p>
+        <p id="li"><code class="tag">&lt;li&gt;</code> defines a list item.</p>
+        <pre><code class='language-html' lang='html'>&lt;ul&gt;
+  &lt;li&gt;item 1&lt;/li&gt;
+  &lt;li&gt;item 2&lt;/li&gt;
+  &lt;li&gt;item 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+  &lt;li&gt;item 1&lt;/li&gt;
+  &lt;li&gt;item 2&lt;/li&gt;
+  &lt;li&gt;item 3&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+        <div class="example">
+          <ul>
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+          </ul>
+          <ol>
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+          </ol>
+        </div>
+        <p>&nbsp;</p>
+        <p id="table"><code class="tag">&lt;table&gt;</code> defines an HTML table.</p>
+        <p id="th"><code class="tag">&lt;th&gt;</code> defines a header cell in a HTML table.</p>
+        <p id="tr"><code class="tag">&lt;tr&gt;</code> defines a row in an HTML table.</p>
+        <p id="td"><code class="tag">&lt;td&gt;</code> defines a standard data cell in an HTML table.</p>
+        <pre><code class='language-html' lang='html'>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;ID&lt;/th&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Grade&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;01&lt;/td&gt;
+    &lt;td&gt;David&lt;/td&gt;
+    &lt;td&gt;95&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+        <div class="example">
+          <table>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Grade</th>
+            </tr>
+            <tr>
+              <td>01</td>
+              <td>David</td>
+              <td>95</td>
+            </tr>
+          </table>
+        </div>
+        <p>&nbsp;</p>
+        <p id="form"><code class="tag">&lt;form&gt;</code> is used to create an HTML form for user input.</p>
+        <p id="input"><code class="tag">&lt;input&gt;</code> specifies an input field where the user can enter data. input tage has many type attributes values : </p>
+        <pre><code>type=&quot;button&quot;
+type=&quot;checkbox&quot;
+type=&quot;color&quot;
+type=&quot;date&quot;
+type=&quot;datetime-local&quot;
+type=&quot;email&quot;
+type=&quot;file&quot;
+type=&quot;hidden&quot;
+type=&quot;image&quot;
+type=&quot;month&quot;
+type=&quot;password&quot;
+type=&quot;radio&quot;
+type=&quot;range&quot;
+type=&quot;reset&quot;
+type=&quot;search&quot;
+type=&quot;submit&quot;
+type=&quot;tel&quot;
+type=&quot;text&quot;
+type=&quot;time&quot;
+type=&quot;url&quot;
+type=&quot;week&quot;</code></pre>
+        <p id="textarea"><code class="tag">&lt;textarea&gt;</code> defines a multi-line text input control.</p>
+        <p id="button"><code class="tag">&lt;button&gt;</code> defines a clickable button.</p>
+        <p id="label"><code class="tag">&lt;label&gt;</code> defines a label for several elements.</p>
+        <pre><code class='language-html' lang='html'>&lt;form&gt;
+  &lt;div&gt;
+    &lt;label for=&quot;name&quot;&gt;Name:&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;name&quot; name=&quot;name&quot;&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label for=&quot;age&quot;&gt;Age:&lt;/label&gt;
+    &lt;input type=&quot;number&quot; id=&quot;age&quot; name=&quot;age&quot;&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label for=&quot;profile&quot;&gt;Profile:&lt;/label&gt;
+    &lt;textarea id=&quot;profile&quot; name=&quot;profile&quot;&gt;
+    &lt;/textarea&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;button type=&quot;submit&quot;&gt;Save&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+        <div class="example">
+          <form>
+            <div>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name">
+            </div>
+            <div style="margin-top: 5px">
+              <label for="age">Age:</label>
+              <input type="number" id="age" name="age">
+            </div>
+            <div style="margin-top: 5px">
+              <label for="profile">Profile:</label>
+              <textarea id="profile" name="profile">
+              </textarea>
+            </div>
+            <div style="margin-top: 5px">
+              <button onclick="return false;">Save</button>
+            </div>
+          </form>
+        </div>
+        <p>&nbsp;</p>
+        <p id="div"><code class="tag">&lt;div&gt;</code> defines a division or a section in an HTML document.</p>
+        <p id="br"><code class="tag">&lt;br&gt;</code> inserts a single line break.</p>
+        <p id="hr"><code class="tag">&lt;hr&gt;</code> defines a thematic break in an HTML page.</p>
+        <pre><code class='language-html' lang='html'>&lt;div&gt;
+  &lt;p&gt;This is a line.&lt;br&gt;This is another line.&lt;/p&gt;
+  &lt;hr&gt;
+  &lt;p&gt;This is another paragraph.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+        <div class="example">
+          <div>
+            <p>This is a line.<br>This is another line.</p>
+            <hr>
+            <p>This is another paragraph.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <section>
+          <cite id="cite1">Some explanation from <a href="https://www.w3schools.com/">https://www.w3schools.com</a></cite>
+        </section>
+      </footer>
+    </article>
+  </main>
+  <a id="back-to-top" href="#top"></a>
+  <div id="play-game-prompt" hidden>
+    <div>
+      <p>Do you want to play a "catch me 10 times" game?</p>
+    </div>
+    <div>
+      <button id="btn-yes">Yes</button>
+      <button id="btn-no">No</button>
+    </div>
+  </div>
+  <div id="game-over-message" hidden>
+    <div>
+      <p id="message"></p>
+    </div>
+    <div>
+      <button id="btn-ok">OK</button>
+    </div>
   </div>
 </body>
 </html>

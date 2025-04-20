@@ -1,0 +1,10 @@
+main > header {
+    background-image: url("../image/tech1.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 188px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

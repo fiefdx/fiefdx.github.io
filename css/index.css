@@ -1,0 +1,426 @@
+@font-face {
+    font-family: RobotoCondensed;
+    src: url(../fonts/RobotoCondensed-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(../fonts/Roboto-VariableFont_wdth,wght.ttf);
+}
+
+@font-face {
+    font-family: Yantramanav;
+    src: url(../fonts/Yantramanav-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+:root {
+    --black: 0, 0, 0;
+    --light-black: 30, 30, 30;
+    --white: 255, 255, 255;
+    --yellow: 255, 255, 84;
+    --grey: 68, 68, 68;
+    --dark-grey: 125, 125, 125;
+    --light-grey: 204, 204, 204;
+    --trans-grey: 0, 0, 0, 0.5;
+    --header-width: calc(100%);
+    --header-image-left: calc(90% - 135px);
+    --right: calc(100vw - 120px);
+    --bottom: calc(100vh - 100px);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: Yantramanav;
+    color: rgb(var(--grey));
+    min-width: 500px; /* page min-width */
+}
+
+h1,
+h2,
+h3 {
+    font-family: RobotoCondensed;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+body > header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+body > header > h1 {
+    font-family: Roboto;
+    background-color: rgb(var(--light-black));
+    width: 100%;
+    text-align: center;
+    color: rgb(var(--white));
+    font-size: 0.8em;
+    font-weight: 500;
+    padding: 0.9em 0;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+nav > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgb(var(--grey));
+    padding: 0;
+}
+
+nav > ul > li {
+    font-family: Yantramanav;
+    font-size: 0.7em;
+    font-weight: bold;
+    padding: 1.5em 1.5em;
+    list-style-type: none;
+}
+
+nav > ul > li.selected {
+    font-family: Yantramanav;
+    font-size: 0.7em;
+    font-weight: bold;
+    padding: 1.5em 1.5em;
+    list-style-type: none;
+    background-color: rgb(var(--black));
+}
+
+li > a {
+    color: rgb(var(--white));
+    text-decoration: none;
+}
+
+main > header {
+    background-image: url("../image/tech3.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 188px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header > section {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+    background-color: rgba(var(--trans-grey));
+    padding: 0 15px;
+}
+
+header > section div.author {
+    margin-top: 35px;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: row;
+}
+
+header > section div.avatar {
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+header > section div.avatar img {
+    top: 175px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-color: rgb(255, 253, 144);
+    border-width: 0px;
+    border-style: solid;
+}
+
+header > section div.avatar span {
+    position: absolute;
+    margin-left: 7px;
+    color: rgb(var(--dark-grey));
+    font-size: 1.0em;
+    font-weight: 500;
+}
+
+header > section > h1 {
+    width: var(--header-width);
+    color: rgb(var(--white));
+    font-size: 3.0em;
+}
+
+header > section > h2 {
+    width: var(--header-width);
+    color: rgb(var(--light-grey));
+    font-size: 2.0em;
+    font-weight: 500;
+}
+
+header > section h3 {
+    color: rgb(var(--light-grey));
+    font-size: 1.0em;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+article {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 0 5%;
+}
+
+article > aside {
+    margin-top: 5px;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+    background-color: rgb(var(--grey));
+    color: rgb(var(--white));
+}
+
+aside > h2 {
+    background-color: rgb(var(--black));
+    padding: 15px;
+    color: rgb(var(--light-grey));
+    font-size: 1.0em;
+    font-weight: 400;
+}
+
+div.index {
+    padding: 10px;
+}
+
+div.index > ul,ol,li,h4 {
+    font-size: 1.0em;
+    font-weight: 200;
+}
+
+div.index li a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+div.index li a:hover {
+    cursor: default;
+    color: red;
+    background-color: rgb(var(--black));
+}
+
+aside > p {
+    padding: 15px;
+    font-size: 0.7em;
+}
+
+code.tag {
+    color: red;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+div.example {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 0.1em 0.1em 0.1em 0.1em;
+    border-color: rgb(var(--dark-grey));
+}
+
+article > section {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+    border-style: solid;
+    border-width: 0.1em 0.1em 0.1em 0.1em;
+    border-color: rgb(var(--black));
+    margin-top: 5px;
+}
+
+article > section > h2 {
+    background-color: rgb(var(--black));
+    padding: 8px 13px;
+    font-size: 0.9em;
+    font-weight: 400;
+    width: 300px;
+    color: rgb(var(--light-grey));
+}
+
+article > section > p {
+    padding: 8px 13px;
+    width: 100%;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: rgb(var(--dark-grey));
+}
+
+article > footer {
+    padding: 15px 0;
+    margin: 20px 20px;
+    font-size: 0.8em;
+    color: rgb(var(--grey));
+}
+
+article > footer a {
+    color: rgb(var(--grey));
+    text-decoration: none;
+}
+
+@keyframes top-hover {
+  0%   {background-color: rgb(var(--light-grey)); border-color: rgb(var(--light-grey));}
+  100% {background-color: aqua; border-color: aqua;}
+}
+
+a#back-to-top {
+    background-image: url("../image/top-trans.png");
+    background-size: cover;
+    background-position: center;
+    width: 70px;
+    height: 70px;
+    top: var(--bottom);
+    left: var(--right);
+    position: fixed;
+    background-color: rgb(var(--light-grey));
+    text-decoration: none;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 0.1em 0.1em 0.1em 0.1em;
+    border-color: rgb(var(--light-grey));
+    font-size: 1.5em;
+    font-weight: 400;
+    z-index: 1000;
+}
+
+a#back-to-top:hover {
+    animation-name: top-hover;
+    animation-duration: 2s;
+}
+
+div#play-game-prompt,div#game-over-message {
+    width: 250px;
+    height: 75px;
+    top: calc(var(--bottom) - 80px);
+    left: calc(var(--right) - 180px);
+    position: fixed;
+    background-color: rgb(var(--light-grey));
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 0.1em 0.1em 0.1em 0.1em;
+    border-color: rgb(var(--dark-grey));
+    font-size: 1.0em;
+    font-weight: 400;
+    text-align: center;
+}
+
+div#play-game-prompt div {
+    margin-top: 3px;
+}
+
+div#game-over-message div {
+    margin-top: 8px;
+}
+
+/* for extra small screens fix the page width as 350px */
+@media all and (min-width: 0px) {
+    article > aside {
+        width: 100%;
+    }
+     
+    article > section {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    article > section p {
+        max-width: 95%;
+    }
+
+    article > footer {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    a#back-to-top {
+        top: calc(var(--bottom) + 20px);
+        left: calc(var(--right) + 20px);
+    }
+}
+
+/* for small screens */
+@media all and (min-width: 500px) {
+    article > aside {
+        width: 100%;
+    }
+     
+    article > section {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    article > section p {
+        max-width: 95%;
+    }
+
+    article > footer {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    a#back-to-top {
+        top: calc(var(--bottom) + 20px);
+        left: calc(var(--right) + 20px);
+    }
+}
+
+/* for large screens */
+@media all and (min-width: 750px) {
+    article > aside {
+        position: absolute;
+        left: 8%;
+        width: 20%;
+    }
+    
+    article > section {
+        margin-left: 27%;
+        width: 70%;
+    }
+
+    article > section p {
+        max-width: 70%;
+    }
+
+    article > footer {
+        margin-left: 27%;
+        width: 70%;
+    }
+
+    a#back-to-top {
+        top: var(--bottom);
+        left: var(--right);
+    }
+}

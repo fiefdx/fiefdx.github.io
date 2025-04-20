@@ -1,0 +1,66 @@
+main > header {
+    background-image: url("../image/tech2.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 188px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p > code {
+  color: red;
+}
+
+article > section > h3 {
+    background-color: rgb(var(--grey));
+    padding: 8px 13px;
+    font-size: 0.9em;
+    font-weight: 400;
+    width: 300px;
+    color: rgb(var(--light-grey));
+}
+
+article > section > h4 {
+    margin-left: 15px;
+    font-size: 0.9em;
+    font-weight: 600;
+    width: 300px;
+    color: rgb(var(--black));
+}
+
+table {
+    width: 100%;
+}
+
+table,td,tr,th {
+    text-align: left;
+    border-style: solid;
+    border-width: 0.1em 0.1em 0.1em 0.1em;
+    border-color: rgb(var(--dark-grey));
+}
+
+/* for extra small screens fix the page width as 350px */
+@media all and (min-width: 0px) {
+    img#css-selector {
+        margin-left: 0;
+        width: 93%;
+    }
+}
+
+/* for small screens */
+@media all and (min-width: 500px) {
+    img#css-selector {
+        margin-left: 0;
+        width: 93%;
+    }
+}
+
+/* for large screens */
+@media all and (min-width: 750px) {
+    img#css-selector {
+        margin-left: 0;
+        width: 70%;
+    }
+}

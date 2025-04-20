@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Development Tutorials</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/css-js.css">
+  <link rel="stylesheet" href="css/js.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="js/script.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+<body>
+  <header id="top">
+    <h1>Web Development Tutorials</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">HTML Cheat Sheet</a></li>
+        <li><a href="css.html">CSS Cheat Sheet</a></li>
+        <li class="selected"><a href="js.html">JS Cheat Sheet</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <header>
+      <section>
+        <h1>JS Cheat Sheet</h1>
+        <h2>for beginners</h2>
+        <div class="author">
+          <h3>wrote at 2025-04-07 by</h3>
+          <div class="avatar">
+            <img src="image/fiefdx.png">
+            <span>fiefdx</span>
+          <div>
+        </div>
+      </section>
+    </header>
+      
+    <article>
+      <aside id="index">
+        <h2>Content Index</h2>
+        <div class="index">
+          <ol start='' >
+            <li><a href="#introduction"><p>Introduction</p></a></li>
+            <li><a href="#place-javascript"><p>Place JavaScript</p></a>
+              <ul>
+                <li><a href="#inline-scripting">Inline Scripting</a></li>
+                <li><a href="#internal-or-embeded-scripting">Internal or Embedded Scripting</a></li>
+                <li><a href="#external-scripting-file">External Scripting File</a></li>
+              </ul>
+            </li>
+            <li><a href="#output"><p>Output</p></a>
+              <ul>
+                <li><a href="#using-innerhtml">Using innerHTML</a></li>
+                <li><a href="#using-innertext">Using innerText</a></li>
+                <li><a href="#using-document-write">Using document.write()</a></li>
+                <li><a href="#using-window-alert">Using window.alert()</a></li>
+                <li><a href="#using-console-log">Using console.log()</a></li>
+              </ul>
+            </li>
+            <li><a href="#statements"><p>Statements</p></a>
+              <ul>
+                <li><a href="#statements-statements">Statements</a></li>
+                <li><a href="#semicolons">Semicolons (;)</a></li>
+                <li><a href="#white-space">White Space</a></li>
+                <li><a href="#line-length-and-line-breaks">Line Length and Line Breaks</a></li>
+                <li><a href="#code-blocks">Code Blocks</a></li>
+                <li><a href="#keywords">Keywords</a></li>
+              </ul>
+            </li>
+            <li><a href="#syntax"><p>Syntax</p></a>
+              <ul>
+                <li><a href="#values">Values</a></li>
+                <li><a href="#syntax-operators">Operators</a></li>
+                <li><a href="#expressions">Expressions</a></li>
+                <li><a href="#identifiers">Identifiers / Names</a></li>
+                <li><a href="#case-sensitive">Case Sensitive</a></li>
+                <li><a href="#camel-case">Camel Case</a></li>
+                <li><a href="#character-set">Character Set</a></li>
+              </ul>
+            </li>
+            <li><a href="#comments"><p>Comments</p></a>
+              <ul>
+                <li><a href="#single-line-comments">Single Line Comments</a></li>
+                <li><a href="#multi-line-comments">Multi-line Comments</a></li>
+              </ul>
+            </li>
+            <li><a href="#let"><p>Let</p></a>
+              <ul>
+                <li><a href="#block-scope">Block Scope</a></li>
+                <li><a href="#global-scope">Global Scope</a></li>
+                <li><a href="#cannot-be-redeclared">Cannot be Redeclared</a></li>
+              </ul>
+            </li>
+            <li><a href="#const"><p>Const</p></a>
+              <ul>
+                <li><a href="#cannot-be-reassigned">Cannot be Reassigned</a></li>
+                <li><a href="#must-be-assigned">Must be Assigned</a></li>
+                <li><a href="#constant-arrays">Constant Arrays</a></li>
+                <li><a href="#constant-objects">Constant Objects</a></li>
+              </ul>
+            </li>
+            <li><a href="#operators"><p>Operators</p></a>
+              <ul>
+                <li><a href="#arithmetic-operators">Arithmetic Operators</a></li>
+                <li><a href="#assignment-operators">Assignment Operators</a></li>
+                <li><a href="#comparison-operators">Comparison Operators</a></li>
+                <li><a href="#logical-operators">Logical Operators</a></li>
+                <li><a href="#logical-assignment-operators">Logical Assignment Operators</a></li>
+                <li><a href="#type-operators">Type Operators</a></li>
+                <li><a href="#bitwise-operators">Bitwise Operators</a></li>
+                <li><a href="#bitwise-assignment-operators">Bitwise Assignment Operators</a></li>
+                <li><a href="#shift-assignment-operators">Shift Assignment Operators</a></li>
+              </ul>
+            </li>
+            <li><a href="#data-types"><p>Data Types</p></a>
+              <ul>
+                <li><a href="#8-datatypes">8 Datatypes</a></li>
+                <li><a href="#object-datatype">Object Datatype</a></li>
+              </ul>
+            </li>
+            <li><a href="#conditions"><p>Conditions</p></a>
+              <ul>
+                <li><a href="#if-else-and-else-if">if, else, and else if</a></li>
+                <li><a href="#switch">switch</a></li>
+              </ul>
+            </li>
+            <li><a href="#loop"><p>Loop</p></a>
+              <ul>
+                <li><a href="#for-loop">For Loop</a></li>
+                <li><a href="#for-in-loop">For In Loop</a></li>
+                <li><a href="#for-of-loop">For Of Loop</a></li>
+                <li><a href="#while-loop">While Loop</a></li>
+              </ul>
+            </li>
+            <li><a href="#functions"><p>Functions</p></a></li>
+            <li><a href="#objects"><p>Objects</p></a></li>
+            <li><a href="#events"><p>Events</p></a></li>
+            <li><a href="#strings"><p>Strings</p></a>
+              <ul>
+                <li><a href="#escape-characters">Escape Characters</a></li>
+              </ul>
+            </li>
+            <li><a href="#arrays"><p>Arrays</p></a></li>
+            <li><a href="#json"><p>JSON</p></a>
+              <ul>
+                <li><a href="#json-data">JSON Data</a></li>
+                <li><a href="#json-objects">JSON Objects</a></li>
+                <li><a href="#json-arrays">JSON Arrays</a></li>
+                <li><a href="#json-to-object">JSON to Object</a></li>
+                <li><a href="#object-to-json">Object to JSON</a></li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </aside>
+
+      <section id="introduction">
+        <h2>Introduction</h2>
+        <p>World’s most popular programming language.</p>
+        <p>Scripting language – does not need to be compiled.</p>
+        <p>Object-oriented (OO) language. Used for client-side and server-side applications.</p>
+        <p>JavaScript is the programming language of the web.</p>
+        <p>It can update and change both HTML and CSS.</p>
+        <p>It can calculate, manipulate and validate data.</p>
+      </section>
+
+      <section id="place-javascript">
+        <h2>Place JavaScript</h2>
+        <h3 id="inline-scripting">Inline Scripting</h3>
+        <p>Use specific attributes to insert JavaScript code directly onto an HTML element.</p>
+        <pre><code class='language-html' lang='html'>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+  &lt;h2&gt;Demo JavaScript in Body&lt;/h2&gt;
+  &lt;p id=&quot;demo&quot;&gt;A Paragraph&lt;/p&gt;
+  &lt;button type=&quot;button&quot; onclick=&quot;console.log(&#39;test&#39;)&quot;&gt;Try it&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <h3 id="internal-or-embeded-scripting">Internal or Embedded Scripting</h3>
+        <p>Insert JavaScript code between <code>&lt;script&gt;&lt;/script&gt;</code> tags located directly in the HTML.</p>
+        <p>Can be placed in the <code>&lt;head&gt;</code> or <code>&lt;body&gt;</code> tags.</p>
+        <pre><code class='language-html' lang='html'>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+  &lt;h2&gt;Demo JavaScript in Body&lt;/h2&gt;
+  &lt;p id=&quot;demo&quot;&gt;A Paragraph&lt;/p&gt;
+  &lt;button type=&quot;button&quot; onclick=&quot;myFunction()&quot;&gt;Try it&lt;/button&gt;
+
+  &lt;script&gt;
+  function myFunction() {
+    document.getElementById(&quot;demo&quot;).innerHTML = &quot;Paragraph changed.&quot;;
+  }
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <h3 id="external-scripting-file">External Scripting File</h3>
+        <p>Place JavaScript code in a separate .js file and then link to it in the <code>&lt;head&gt;</code> tag.</p>
+        <p>Example: <code>&lt;script src=“script.js&quot;&gt;&lt;/script&gt;</code></p>
+        <pre><code class='language-html' lang='html'>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src=&quot;myScript.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h2&gt;Demo JavaScript in Body&lt;/h2&gt;
+    &lt;p id=&quot;demo&quot;&gt;A Paragraph&lt;/p&gt;
+    &lt;button type=&quot;button&quot; onclick=&quot;myFunction()&quot;&gt;Try it&lt;/button&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <p>myScript.js</p>
+        <pre><code class='language-javascript' lang='javascript'>function myFunction() {
+  document.getElementById(&quot;demo&quot;).innerHTML = &quot;Paragraph changed.&quot;;
+}</code></pre>
+      </section>
+
+      <section id="output">
+        <h2>Output</h2>
+        <p>JavaScript can &quot;display&quot; data in different ways:</p>
+        <ul>
+          <li>Writing into an HTML element, using <code>innerHTML</code> or <code>innerText</code>.</li>
+          <li>Writing into the HTML output using <code>document.write()</code>.</li>
+          <li>Writing into an alert box, using <code>window.alert()</code>.</li>
+          <li>Writing into the browser console, using <code>console.log()</code>.</li>
+        </ul>
+        <h3 id="using-innerhtml">Using innerHTML</h3>
+        <p>To access an HTML element, you can use the <code>document.getElementById(id)</code> method.</p>
+        <p>Then use the <code>innerHTML</code> property to change the HTML content of the HTML element.</p>
+        <pre><code class='language-html' lang='html'>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;body&gt;
+    &lt;h1&gt;My First Web Page&lt;/h1&gt;
+    &lt;p&gt;My First Paragraph&lt;/p&gt;
+    &lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;
+
+    &lt;script&gt;
+      document.getElementById(&quot;demo&quot;).innerHTML = &quot;&lt;h2&gt;Hello World&lt;/h2&gt;&quot;;
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <h3 id="using-innertext">Using innerText</h3>
+        <p>To access an HTML element, use the <code>document.getElementById(id)</code> method.</p>
+        <p>Then use the <code>innerText</code> property to change the inner text of the HTML element.</p>
+        <pre><code class='language-html' lang='html'>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;body&gt;
+    &lt;h1&gt;My First Web Page&lt;/h1&gt;
+    &lt;p&gt;My First Paragraph&lt;/p&gt;
+    &lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;
+
+    &lt;script&gt;
+      document.getElementById(&quot;demo&quot;).innerText = &quot;Hello World&quot;;
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <h3 id="using-document-write">Using document.write()</h3>
+        <p>For testing purposes, it is convenient to use <code>document.write()</code>.</p>
+        <p>Using <code>document.write()</code> after an HTML document is loaded, will <strong>delete all existing HTML</strong>.</p>
+        <pre><code class='language-html' lang='html'>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;body&gt;
+    &lt;h1&gt;My First Web Page&lt;/h1&gt;
+    &lt;p&gt;My first paragraph.&lt;/p&gt;
+    &lt;button type=&quot;button&quot; onclick=&quot;document.write(5 + 6)&quot;&gt;Try it&lt;/button&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <h3 id="using-window-alert">Using window.alert()</h3>
+        <p>You can use an alert box to display data.</p>
+        <pre><code class='language-html' lang='html'>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;body&gt;
+    &lt;h1&gt;My First Web Page&lt;/h1&gt;
+    &lt;p&gt;My first paragraph.&lt;/p&gt;
+    &lt;script&gt;
+      alert(5 + 6);
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <h3 id="using-console-log">Using console.log()</h3>
+        <p>For debugging purposes, you can call the <code>console.log()</code> method in the browser to display data.</p>
+        <pre><code class='language-html' lang='html'>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;body&gt;
+    &lt;script&gt;
+      console.log(5 + 6);
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </section>
+
+      <section id="statements">
+        <h2>Statements</h2>
+        <h3 id="statements-statements">Statements</h3>
+        <p>JavaScript statements are composed of: Values, Operators, Expressions, Keywords, and Comments.</p>
+        <pre><code class='language-javascript' lang='javascript'>let x, y, z;    // Statement 1
+x = 5;          // Statement 2
+y = 6;          // Statement 3
+z = x + y;      // Statement 4</code></pre>
+        <h3 id="semicolons">Semicolons (;)</h3>
+        <p>Semicolons separate JavaScript statements.</p>
+        <p>Add a semicolon at the end of each executable statement.</p>
+        <pre><code class='language-javascript' lang='javascript'>let a, b, c;  // Declare 3 variables
+a = 5;        // Assign the value 5 to a
+b = 6;        // Assign the value 6 to b
+c = a + b;    // Assign the sum of a and b to c
+a = 5; b = 6; c = a + b;  // When separated by semicolons, multiple statements on one line are allowed</code></pre>
+        <h3 id="white-space">White Space</h3>
+        <p>JavaScript ignores multiple spaces. You can add white space to your script to make it more readable.</p>
+        <pre><code class='language-javascript' lang='javascript'>let person = &quot;Hege&quot;;
+let person=&quot;Hege&quot;;
+let x = y + z;</code></pre>
+        <h3 id="line-length-and-line-breaks">Line Length and Line Breaks</h3>
+        <p>For best readability, programmers often like to avoid code lines longer than 80 characters.</p>
+        <p>If a JavaScript statement does not fit on one line, the best place to break it is after an operator.</p>
+        <pre><code class='language-javascript' lang='javascript'>document.getElementById(&quot;demo&quot;).innerHTML =
+&quot;Hello Dolly!&quot;;</code></pre>
+        <h3 id="code-blocks">Code Blocks</h3>
+        <p>JavaScript statements can be grouped together in code blocks, inside curly brackets <code>{...}</code>.</p>
+        <p>The purpose of code blocks is to define statements to be executed together.</p>
+        <p>One place you will find statements grouped together in blocks, is in JavaScript functions.</p>
+        <pre><code class='language-javascript' lang='javascript'>function myFunction() {
+  document.getElementById(&quot;demo1&quot;).innerHTML = &quot;Hello Dolly!&quot;;
+  document.getElementById(&quot;demo2&quot;).innerHTML = &quot;How are you?&quot;;
+}</code></pre>
+        <h3 id="keywords">Keywords</h3>
+        <p>Here is a list of some of the keywords in JavaScript:</p>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>Keyword</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>var</td>
+                <td>Declares a variable</td>
+              </tr>
+              <tr>
+                <td>let</td>
+                <td>Declares a block variable</td>
+              </tr>
+              <tr>
+                <td>const</td>
+                <td>Declares a block constant</td>
+              </tr>
+              <tr>
+                <td>if</td>
+                <td>Marks a block of statements to be executed on a condition</td>
+              </tr>
+              <tr>
+                <td>switch</td>
+                <td>Marks a block of statements to be executed in different cases</td>
+              </tr>
+              <tr>
+                <td>for</td>
+                <td>Marks a block of statements to be executed in a loop</td>
+              </tr>
+              <tr>
+                <td>function</td>
+                <td>Declares a function</td>
+              </tr>
+              <tr>
+                <td>return</td>
+                <td>Exits a function</td>
+              </tr>
+              <tr>
+                <td>try</td>
+                <td>Implements error handling to a block of statements</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="syntax">
+        <h2>Syntax</h2>
+        <p>JavaScript syntax is the set of rules, how JavaScript programs are constructed.</p>
+        <h3 id="values">Values</h3>
+        <p>The JavaScript syntax defines two types of values:</p>
+        <ul>
+          <li>Fixed values</li>
+          <li>Variable values</li>
+        </ul>
+        <p>Fixed values are called <strong>Literals</strong>.</p>
+        <p>Variable values are called <strong>Variables</strong>.</p>
+        <h4>Literals</h4>
+        <p><strong>Numbers</strong> are written with or without decimals.</p>
+        <pre><code class='language-javascript' lang='javascript'>10.50
+1001</code></pre>
+        <p><strong>Strings</strong> are text, written within double or single quotes.</p>
+        <pre><code class='language-javascript' lang='javascript'>&quot;John Doe&quot;
+&#39;John Doe&#39;</code></pre>
+        <h4>Variables</h4>
+        <p>In a programming language, <strong>variables</strong> are used to <strong>store</strong> data values.</p>
+        <p>JavaScript uses the keywords <code>var</code>, <code>let</code> and <code>const</code> to <strong>declare</strong> variables.</p>
+        <p>An <strong>equal sign</strong> is used to <strong>assign values</strong> to variables.</p>
+        <pre><code class='language-javascript' lang='javascript'>let x;
+x = 6;
+var y = 7;</code></pre>
+        <h3 id="syntax-operators">Operators</h3>
+        <p>JavaScript uses <strong>arithmetic operators</strong> ( <code>+</code> <code>-</code> <code>*</code> <code>/</code> ) to <strong>compute</strong> values, uses an <strong>assignment operator</strong> ( <code>=</code> ) to <strong>assign</strong> values to variables.</p>
+        <pre><code class='language-javascript' lang='javascript'>(5 + 6) * 10;
+let x, y;
+x = 5;
+y = 6;</code></pre>
+        <h3 id="expressions">Expressions</h3>
+        <p>An expression is a combination of values, variables, and operators, which computes to a value.</p>
+        <pre><code class='language-javascript' lang='javascript'>5 * 10
+x * 10
+&quot;John&quot; + &quot; &quot; + &quot;Doe&quot;</code></pre>
+        <h3 id="identifiers">Identifiers / Names</h3>
+        <p>Identifiers are JavaScript names.</p>
+        <p>Identifiers are used to name variables and keywords, and functions.</p>
+        <p>The rules for legal names are the same in most programming languages.</p>
+        <p>A JavaScript name must begin with:</p>
+        <ul>
+          <li>A letter (A-Z or a-z)</li>
+          <li>A dollar sign ($)</li>
+          <li>Or an underscore (_)</li>
+        </ul>
+        <p>Subsequent characters may be letters, digits, underscores, or dollar signs.</p>
+        <h3 id="case-sensitive">Case Sensitive</h3>
+        <p>All JavaScript identifiers are <strong>case sensitive</strong>. </p>
+        <pre><code class='language-javascript' lang='javascript'>let lastname, lastName;
+lastName = &quot;Doe&quot;;
+lastname = &quot;Peterson&quot;;</code></pre>
+        <h3 id="camel-case">Camel Case</h3>
+        <p>Historically, programmers have used different ways of joining multiple words into one variable name:</p>
+        <p><strong>Hyphens:</strong> first-name, last-name, master-card, inter-city.</p>
+        <p><strong>Underscore:</strong> first_name, last_name, master_card, inter_city.</p>
+        <p><strong>Upper Camel Case (Pascal Case):</strong> FirstName, LastName, MasterCard, InterCity.</p>
+        <p><strong>Lower Camel Case:</strong> JavaScript programmers tend to use camel case that starts with a lowercase letter: firstName, lastName, masterCard, interCity.</p>
+        <h3 id="character-set">Character Set</h3>
+        <p>JavaScript uses the <strong>Unicode</strong> character set.</p>
+        <p>Unicode covers (almost) all the characters, punctuations, and symbols in the world.</p>
+      </section>
+
+      <section id="comments">
+        <h2>Comments</h2>
+        <h3 id="single-line-comments">Single Line Comments</h3>
+        <p>Single line comments start with <code>//</code>.</p>
+        <p>Any text between <code>//</code> and the end of the line will be ignored by JavaScript (will not be executed).</p>
+        <pre><code class='language-javascript' lang='javascript'>// Change heading:
+document.getElementById(&quot;myH&quot;).innerHTML = &quot;My First Page&quot;;
+
+// Change paragraph:
+document.getElementById(&quot;myP&quot;).innerHTML = &quot;My first paragraph.&quot;;
+
+let x = 5;      // Declare x, give it the value of 5
+let y = x + 2;  // Declare y, give it the value of x + 2</code></pre>
+        <h3 id="multi-line-comments">Multi-line Comments</h3>
+        <p>Multi-line comments start with <code>/*</code> and end with <code>*/</code>.</p>
+        <p>Any text between <code>/*</code> and <code>*/</code> will be ignored by JavaScript.</p>
+        <pre><code class='language-javascript' lang='javascript'>/*
+The code below will change
+the heading with id = &quot;myH&quot;
+and the paragraph with id = &quot;myP&quot;
+in my web page:
+*/
+document.getElementById(&quot;myH&quot;).innerHTML = &quot;My First Page&quot;;
+document.getElementById(&quot;myP&quot;).innerHTML = &quot;My first paragraph.&quot;;</code></pre>
+      </section>
+
+      <section id="let">
+        <h2>Let</h2>
+        <h3 id="block-scope">Block Scope</h3>
+        <p>These two keywords <code>let</code> and <code>const</code> provided <strong>Block Scope</strong> in JavaScript.</p>
+        <pre><code class='language-javascript' lang='javascript'>/* Variables declared inside a { } block cannot be accessed from outside the block */
+{
+  let x = 2;
+}
+// x can NOT be used here</code></pre>
+        <h3 id="global-scope">Global Scope</h3>
+        <p>Variables declared with the <code>var</code> always have <strong>Global Scope</strong>.</p>
+        <pre><code class='language-javascript' lang='javascript'>/* Variables declared with varinside a { } block can be accessed from outside the block */
+{
+  var x = 2;
+}
+// x CAN be used here</code></pre>
+        <h3 id="cannot-be-redeclared">Cannot be Redeclared</h3>
+        <p>Variables defined with <code>let</code> <strong>can not</strong> be redeclared.</p>
+        <pre><code class='language-javascript' lang='javascript'>/* With let you can not do this */
+let x = &quot;John Doe&quot;;
+let x = 0;
+
+/* With var you can do this */
+var x = &quot;John Doe&quot;;
+var x = 0;</code></pre>
+      </section>
+
+      <section id="const">
+        <h2>Const</h2>
+        <h3 id="cannot-be-reassigned">Cannot be Reassigned</h3>
+        <p>A variable defined with the <code>const</code> keyword cannot be reassigned.</p>
+        <pre><code class='language-javascript' lang='javascript'>const PI = 3.141592653589793;
+PI = 3.14;      // This will give an error
+PI = PI + 10;   // This will also give an error</code></pre>
+        <h3 id="must-be-assigned">Must be Assigned</h3>
+        <p>JavaScript <code>const</code> variables must be assigned a value when they are declared.</p>
+        <pre><code class='language-javascript' lang='javascript'>const PI = 3.14159265359; // right
+
+const PI;                 // wrong
+PI = 3.14159265359;       // wrong</code></pre>
+        <h3 id="constant-arrays">Constant Arrays</h3>
+        <p>You can change the elements of a constant array but not reassign the array.</p>
+        <pre><code class='language-javascript' lang='javascript'>// You can create a constant array:
+const cars = [&quot;Saab&quot;, &quot;Volvo&quot;, &quot;BMW&quot;];
+// You can change an element:
+cars[0] = &quot;Toyota&quot;;
+// You can add an element:
+cars.push(&quot;Audi&quot;);
+
+const cars = [&quot;Saab&quot;, &quot;Volvo&quot;, &quot;BMW&quot;];
+cars = [&quot;Toyota&quot;, &quot;Volvo&quot;, &quot;Audi&quot;];    // ERROR</code></pre>
+        <h3 id="constant-objects">Constant Objects</h3>
+        <p>You can change the properties of a constant object but not reassign the object.</p>
+        <pre><code class='language-javascript' lang='javascript'>// You can create a const object:
+const car = {type:&quot;Fiat&quot;, model:&quot;500&quot;, color:&quot;white&quot;};
+// You can change a property:
+car.color = &quot;red&quot;;
+// You can add a property:
+car.owner = &quot;Johnson&quot;;
+
+const car = {type:&quot;Fiat&quot;, model:&quot;500&quot;, color:&quot;white&quot;};
+car = {type:&quot;Volvo&quot;, model:&quot;EX60&quot;, color:&quot;red&quot;};    // ERROR</code></pre>
+      </section>
+
+      <section id="operators">
+        <h2>Operators</h2>
+        <h3 id="arithmetic-operators">Arithmetic Operators</h3>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>Operator</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>+</td>
+                <td>Addition</td>
+              </tr>
+              <tr>
+                <td>-</td>
+                <td>Subtraction</td>
+              </tr>
+              <tr>
+                <td>*</td>
+                <td>Multiplication</td>
+              </tr>
+              <tr>
+                <td>**</td>
+                <td>Exponentiation</td>
+              </tr>
+              <tr>
+                <td>/</td>
+                <td>Division</td>
+              </tr>
+              <tr>
+                <td>%</td>
+                <td>Modulus (Division Remainder)</td>
+              </tr>
+              <tr>
+                <td>++</td>
+                <td>Increment</td>
+              </tr>
+              <tr>
+                <td>--</td>
+                <td>Decrement</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="assignment-operators">Assignment Operators</h3>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>Operator</th>
+                <th>Example</th>
+                <th>Same As</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>=</td>
+                <td>x = y</td>
+                <td>x = y</td>
+              </tr>
+              <tr>
+                <td>+=</td>
+                <td>x += y</td>
+                <td>x = x + y</td>
+              </tr>
+              <tr>
+                <td>-=</td>
+                <td>x -= y</td>
+                <td>x = x - y</td>
+              </tr>
+              <tr>
+                <td>*=</td>
+                <td>x *= y</td>
+                <td>x = x * y</td>
+              </tr>
+              <tr>
+                <td>/=</td>
+                <td>x /= y</td>
+                <td>x = x / y</td>
+              </tr>
+              <tr>
+                <td>%=</td>
+                <td>x %= y</td>
+                <td>x = x % y</td>
+              </tr>
+              <tr>
+                <td>**=</td>
+                <td>x **= y</td>
+                <td>x = x ** y</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="comparison-operators">Comparison Operators</h3>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>Operator</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>==</td>
+                <td>equal to</td>
+              </tr>
+              <tr>
+                <td>===</td>
+                <td>equal value and equal type</td>
+              </tr>
+              <tr>
+                <td>!=</td>
+                <td>not equal</td>
+              </tr>
+              <tr>
+                <td>!==</td>
+                <td>not equal value or not equal type</td>
+              </tr>
+              <tr>
+                <td>&gt;</td>
+                <td>greater than</td>
+              </tr>
+              <tr>
+                <td>&lt;</td>
+                <td>less than</td>
+              </tr>
+              <tr>
+                <td>&gt;=</td>
+                <td>greater than or equal to</td>
+              </tr>
+              <tr>
+                <td>&lt;=</td>
+                <td>less than or equal to</td>
+              </tr>
+              <tr>
+                <td>?</td>
+                <td>ternary operator</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="logical-operators">Logical Operators</h3>
+        <div>
+          <table>
+            <thead>
+            <tr>
+              <th>Operator</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+            <tbody>
+              <tr>
+                <td>&amp;&amp;</td>
+                <td>logical and</td>
+              </tr>
+              <tr>
+                <td>||</td>
+                <td>logical or</td>
+              </tr>
+              <tr>
+                <td>!</td>
+                <td>logical not</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="logical-assignment-operators">Logical Assignment Operators</h3>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>Operator</th>
+                <th>Example</th>
+                <th>Same As</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>&amp;&amp;=</td>
+                <td>x &amp;&amp;= y</td>
+                <td>x = x &amp;&amp; (x = y)</td>
+              </tr>
+              <tr>
+                <td>||=</td>
+                <td>x ||= y</td>
+                <td>x = x || (x = y)</td>
+              </tr>
+              <tr>
+                <td>??=</td>
+                <td>x ??= y</td>
+                <td>x = x ?? (x = y)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="type-operators">Type Operators</h3>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>Operator</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>typeof</td>
+                <td>Returns the type of a variable</td>
+              </tr>
+              <tr>
+                <td>instanceof</td>
+                <td>Returns true if an object is an instance of an object type</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="bitwise-operators">Bitwise Operators</h3>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>Operator</th>
+                <th>Description</th>
+                <th>Example</th>
+                <th>Same as</th>
+                <th>Result</th>
+                <th>Decimal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>&amp;</td>
+                <td>AND</td>
+                <td>5 &amp; 1</td>
+                <td>0101 &amp; 0001</td>
+                <td>0001</td>
+                <td> 1</td>
+              </tr>
+              <tr>
+                <td>|</td>
+                <td>OR</td>
+                <td>5 | 1</td>
+                <td>0101 | 0001</td>
+                <td>0101</td>
+                <td> 5</td>
+              </tr>
+              <tr>
+                <td>~</td>
+                <td>NOT</td>
+                <td>~ 5</td>
+                <td> ~0101</td>
+                <td>1010</td>
+                <td> 10</td>
+              </tr>
+              <tr>
+                <td>^</td>
+                <td>XOR</td>
+                <td>5 ^ 1</td>
+                <td>0101 ^ 0001</td>
+                <td>0100</td>
+                <td> 4</td>
+              </tr>
+              <tr>
+                <td>&lt;&lt;</td>
+                <td>left shift</td>
+                <td>5 &lt;&lt; 1</td>
+                <td>0101 &lt;&lt; 1</td>
+                <td>1010</td>
+                <td> 10</td>
+              </tr>
+              <tr>
+                <td>&gt;&gt;</td>
+                <td>right shift</td>
+                <td>5 &gt;&gt; 1</td>
+                <td>0101 &gt;&gt; 1</td>
+                <td>0010</td>
+                <td> 2</td>
+              </tr>
+              <tr>
+                <td>&gt;&gt;&gt;</td>
+                <td>unsigned right shift</td>
+                <td>5 &gt;&gt;&gt; 1</td>
+                <td>0101 &gt;&gt;&gt; 1</td>
+                <td>0010</td>
+                <td> 2</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="bitwise-assignment-operators">Bitwise Assignment Operators</h3>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>Operator</th>
+                <th>Example</th>
+                <th>Same As</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>&amp;=</td>
+                <td>x &amp;= y</td>
+                <td>x = x &amp; y</td>
+              </tr>
+              <tr>
+                <td>^=</td>
+                <td>x ^= y</td>
+                <td>x = x ^ y</td>
+              </tr>
+              <tr>
+                <td>|=</td>
+                <td>x |= y</td>
+                <td>x = x | y</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="shift-assignment-operators">Shift Assignment Operators</h3>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>Operator</th>
+                <th>Example</th>
+                <th>Same As</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>&lt;&lt;=</td>
+                <td>x &lt;&lt;= y</td>
+                <td>x = x &lt;&lt; y</td>
+              </tr>
+              <tr>
+                <td>&gt;&gt;=</td>
+                <td>x &gt;&gt;= y</td>
+                <td>x = x &gt;&gt; y</td>
+              </tr>
+              <tr>
+                <td>&gt;&gt;&gt;=</td>
+                <td>x &gt;&gt;&gt;= y</td>
+                <td>x = x &gt;&gt;&gt; y</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="data-types">
+        <h2>Data Types</h2>
+        <h3 id="8-datatypes">8 Datatypes</h3>
+        <ul>
+          <li>String</li>
+          <li>Number</li>
+          <li>Bigint</li>
+          <li>Boolean</li>
+          <li>Undefined</li>
+          <li>Null</li>
+          <li>Symbol</li>
+          <li>Object</li>
+        </ul>
+        <h3 id="object-datatype">Object Datatype</h3>
+        <p>The object data type can contain both <strong>built-in objects</strong>, and <strong>user defined objects</strong>:</p>
+        <p>Built-in object types can be:</p>
+        <p>objects, arrays, dates, maps, sets, intarrays, floatarrays, promises, and more.</p>
+      </section>
+
+      <section id="conditions">
+        <h2>Conditions</h2>
+        <h3 id="if-else-and-else-if">if, else, and else if</h3>
+        <ul>
+          <li>Use <code>if</code> to specify a block of code to be executed, if a specified condition is true</li>
+          <li>Use <code>else</code> to specify a block of code to be executed, if the same condition is false</li>
+          <li>Use <code>else if</code> to specify a new condition to test, if the first condition is false</li>
+        </ul>
+        <pre><code class='language-javascript' lang='javascript'>if (condition) {
+  //  block of code to be executed if the condition is true
+}
+
+if (condition) {
+  //  block of code to be executed if the condition is true
+} else {
+  //  block of code to be executed if the condition is false
+}
+
+if (condition1) {
+  //  block of code to be executed if condition1 is true
+} else if (condition2) {
+  //  block of code to be executed if the condition1 is false and condition2 is true
+} else {
+  //  block of code to be executed if the condition1 is false and condition2 is false
+}</code></pre>
+        <h3 id="switch">switch</h3>
+        <p>Use the <code>switch</code> statement to select one of many code blocks to be executed.</p>
+        <pre><code class='language-javascript' lang='javascript'>switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+
+switch (new Date().getDay()) {
+  case 0:
+    day = &quot;Sunday&quot;;
+    break;
+  case 1:
+    day = &quot;Monday&quot;;
+    break;
+  case 2:
+     day = &quot;Tuesday&quot;;
+    break;
+  case 3:
+    day = &quot;Wednesday&quot;;
+    break;
+  case 4:
+    day = &quot;Thursday&quot;;
+    break;
+  case 5:
+    day = &quot;Friday&quot;;
+    break;
+  case 6:
+    day = &quot;Saturday&quot;;
+}</code></pre>
+      </section>
+
+      <section id="loop">
+        <h2>Loop</h2>
+        <h3 id="for-loop">For Loop</h3>
+        <p>The <code>for</code> statement creates a loop with 3 optional expressions:</p>
+        <pre><code class='language-javascript' lang='javascript'>for (expression 1; expression 2; expression 3) {
+  // code block to be executed
+}</code></pre>
+        <p><strong>Expression 1</strong> is executed (one time) before the execution of the code block.</p>
+        <p><strong>Expression 2</strong> defines the condition for executing the code block.</p>
+        <p><strong>Expression 3</strong> is executed (every time) after the code block has been executed.</p>
+        <pre><code class='language-javascript' lang='javascript'>for (let i = 0; i &lt; 5; i++) {
+  console.log(i);
+}</code></pre>
+        <h3 id="for-in-loop">For In Loop</h3>
+        <p>The <code>for in</code> statement loops through the properties of an Object.</p>
+        <pre><code class='language-javascript' lang='javascript'>for (key in object) {
+  // code block to be executed
+}
+
+const person = {fname:&quot;John&quot;, lname:&quot;Doe&quot;, age:25};
+let text = &quot;&quot;;
+for (let x in person) {
+  console.log(person[x]);
+}</code></pre>
+        <h3 id="for-of-loop">For Of Loop</h3>
+        <p>The <code>for of</code> statement loops through the values of an iterable object.</p>
+        <pre><code class='language-javascript' lang='javascript'>for (variable of iterable) {
+  // code block to be executed
+}
+
+const cars = [&quot;BMW&quot;, &quot;Volvo&quot;, &quot;Mini&quot;];
+let text = &quot;&quot;;
+for (let x of cars) {
+  console.log(x);
+}
+
+let language = &quot;JavaScript&quot;;
+let text = &quot;&quot;;
+for (let x of language) {
+  console.log(x);
+}</code></pre>
+        <h3 id="while-loop">While Loop</h3>
+        <p>The <code>while</code> loop loops through a block of code as long as a specified condition is true.</p>
+        <pre><code class='language-javascript' lang='javascript'>while (condition) {
+  // code block to be executed
+}
+
+while (i &lt; 10) {
+  console.log(&quot;The number is &quot; + i);
+  i++;
+}</code></pre>
+        <p>The <code>do while</code> loop is a variant of the while loop. This loop will execute the code block once, before checking if the condition is true, then it will repeat the loop as long as the condition is true.</p>
+        <pre><code class='language-javascript' lang='javascript'>do {
+  // code block to be executed
+}
+while (condition);
+
+do {
+  console.log(&quot;The number is &quot; + i);
+  i++;
+}
+while (i &lt; 10);</code></pre>
+      </section>
+
+      <section id="functions">
+        <h2>Functions</h2>
+        <p>A JavaScript function is defined with the <code>function</code> keyword, followed by a <strong>name</strong>, followed by parentheses <strong>()</strong>.</p>
+        <p>Function names can contain letters, digits, underscores, and dollar signs (same rules as variables).</p>
+        <p>The parentheses may include parameter names separated by commas:
+        <strong>(*parameter1, parameter2, ...*)</strong></p>
+        <p>The code to be executed, by the function, is placed inside curly brackets: <strong>{}</strong></p>
+        <pre><code class='language-javascript' lang='javascript'>function name(parameter1, parameter2, parameter3, ...) {
+  // code to be executed
+}
+
+// Function is called, the return value will end up in x
+let x = myFunction(4, 3);
+
+function myFunction(a, b) {
+// Function returns the product of a and b
+  return a * b;
+}</code></pre>
+      </section>
+
+      <section id="objects">
+        <h2>Objects</h2>
+        <p>Objects are variables too. But objects can contain many values.</p>
+        <pre><code class='language-javascript' lang='javascript'>const car = {
+  type:&quot;Fiat&quot;,
+  model:&quot;500&quot;,
+  color:&quot;white&quot;
+};
+
+// Create an Object with new
+const person = new Object();
+// Add Properties
+person.firstName = &quot;John&quot;;
+person.lastName = &quot;Doe&quot;;
+person.age = 50;
+person.eyeColor = &quot;blue&quot;;
+
+// Create an Object with method
+const person = {
+  firstName: &quot;John&quot;,
+  lastName : &quot;Doe&quot;,
+  id       : 5566,
+  fullName : function() {
+    return this.firstName + &quot; &quot; + this.lastName;
+  }
+};</code></pre>
+      </section>
+
+      <section id="events">
+        <h2>Events</h2>
+        <p>An HTML event can be something the browser does, or something a user does.</p>
+        <p>Here are some examples of HTML events:</p>
+        <ul>
+          <li>An HTML web page has finished loading</li>
+          <li>An HTML input field was changed</li>
+          <li>An HTML button was clicked</li>
+        </ul>
+        <p>Often, when events happen, you may want to do something.</p>
+        <p>JavaScript lets you execute code when events are detected.</p>
+        <pre><code class='language-html' lang='html'>&lt;button onclick=&quot;concole.log(&#39;button click&#39;)&quot;&gt;click&lt;/button&gt;</code></pre>
+        <pre><code class='language-javascript' lang='javascript'>const button = document.getElementById(&#39;btn&#39;);
+button.addEventListener(&#39;click&#39;, function () {
+  console.log(&quot;button click&quot;);
+});</code></pre>
+        <p>Here is a list of some common HTML events:</p>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>Event</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>onchange</td>
+                <td>An HTML element has been changed</td>
+              </tr>
+              <tr>
+                <td>onclick</td>
+                <td>The user clicks an HTML element</td>
+              </tr>
+              <tr>
+                <td>onmouseover</td>
+                <td>The user moves the mouse over an HTML element</td>
+              </tr>
+              <tr>
+                <td>onmouseout</td>
+                <td>The user moves the mouse away from an HTML element</td>
+              </tr>
+              <tr>
+                <td>onkeydown</td>
+                <td>The user pushes a keyboard key</td>
+              </tr>
+              <tr>
+                <td>onload</td>
+                <td>The browser has finished loading the page</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="strings">
+        <h2>Strings</h2>
+        <p>A JavaScript string is zero or more characters written inside quotes.</p>
+        <pre><code class='language-javascript' lang='javascript'>let text = &quot;John Doe&quot;;</code></pre>
+        <h3 id="escape-characters">Escape Characters</h3>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>Code</th>
+                <th>Result</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>\&#39;</td>
+                <td>&#39;</td>
+              </tr>
+              <tr>
+                <td>\&quot;</td>
+                <td>&quot;</td>
+              </tr>
+              <tr>
+                <td>\\</td>
+                <td>\</td>
+              </tr>
+              <tr>
+                <td>\b</td>
+                <td>Backspace</td>
+              </tr>
+              <tr>
+                <td>\f</td>
+                <td>Form Feed</td>
+              </tr>
+              <tr>
+                <td>\n</td>
+                <td>New Line</td>
+              </tr>
+              <tr>
+                <td>\r</td>
+                <td>Carriage Return</td>
+              </tr>
+              <tr>
+                <td>\t</td>
+                <td>Horizontal Tabulator</td>
+              </tr>
+              <tr>
+                <td>\v</td>
+                <td>Vertical Tabulator</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="arrays">
+        <h2>Arrays</h2>
+        <p>An array can hold many values under a single name, and you can access the values by referring to an index number.</p>
+        <pre><code class='language-javascript' lang='javascript'>const array_name = [item1, item2, ...]; 
+
+const cars = [&quot;Saab&quot;, &quot;Volvo&quot;, &quot;BMW&quot;];
+
+// You can also create an array, and then provide the elements
+const cars = [];
+cars[0]= &quot;Saab&quot;;
+cars[1]= &quot;Volvo&quot;;
+cars[2]= &quot;BMW&quot;;
+let car = cars[0]; // access an array element by referring to the index number</code></pre>
+      </section>
+
+      <section id="json">
+        <h2>JSON</h2>
+        <p>JSON is a format for storing and transporting data.</p>
+        <p>JSON stands for <strong>J</strong>ava<strong>S</strong>cript <strong>O</strong>bject <strong>N</strong>otation.</p>
+        <p>The JSON syntax is derived from JavaScript object notation syntax, but the JSON format is text only.</p>
+        <pre><code class='language-javascript' lang='javascript'>{
+  &quot;employees&quot;:[
+    {&quot;firstName&quot;:&quot;John&quot;, &quot;lastName&quot;:&quot;Doe&quot;},
+    {&quot;firstName&quot;:&quot;Anna&quot;, &quot;lastName&quot;:&quot;Smith&quot;},
+    {&quot;firstName&quot;:&quot;Peter&quot;, &quot;lastName&quot;:&quot;Jones&quot;}
+  ]
+}</code></pre>
+        <h3 id="json-data">JSON Data</h3>
+        <p>JSON data is written as name/value pairs, just like JavaScript object properties.</p>
+        <pre><code class='language-javascript' lang='javascript'>&quot;firstName&quot;:&quot;John&quot;</code></pre>
+        <h3>JSON Objects</h3>
+        <p>JSON objects are written inside curly braces.</p>
+        <pre><code class='language-javascript' lang='javascript'>{&quot;firstName&quot;:&quot;John&quot;, &quot;lastName&quot;:&quot;Doe&quot;}</code></pre>
+        <h3 id="json-arrays">JSON Arrays</h3>
+        <p>JSON arrays are written inside square brackets.</p>
+        <pre><code class='language-javascript' lang='javascript'>&quot;employees&quot;:[
+  {&quot;firstName&quot;:&quot;John&quot;, &quot;lastName&quot;:&quot;Doe&quot;},
+  {&quot;firstName&quot;:&quot;Anna&quot;, &quot;lastName&quot;:&quot;Smith&quot;},
+  {&quot;firstName&quot;:&quot;Peter&quot;, &quot;lastName&quot;:&quot;Jones&quot;}
+]</code></pre>
+        <h3 id="json-to-object">JSON to Object</h3>
+        <p>Use the JavaScript built-in function <code>JSON.parse()</code> to convert the string into a JavaScript object.</p>
+        <pre><code class='language-javascript' lang='javascript'>let text = &#39;{ &quot;employees&quot; : [&#39; +
+&#39;{ &quot;firstName&quot;:&quot;John&quot; , &quot;lastName&quot;:&quot;Doe&quot; },&#39; +
+&#39;{ &quot;firstName&quot;:&quot;Anna&quot; , &quot;lastName&quot;:&quot;Smith&quot; },&#39; +
+&#39;{ &quot;firstName&quot;:&quot;Peter&quot; , &quot;lastName&quot;:&quot;Jones&quot; } ]}&#39;;
+
+const obj = JSON.parse(text);</code></pre>
+        <h3 id="object-to-json">Object to JSON</h3>
+        <p>Use the JavaScript built-in function <code>JSON.stringify()</code> to convert a JavaScript object into string.</p>
+        <pre><code class='language-javascript' lang='javascript'>const obj = {
+   employees:[
+    {firstName:&quot;John&quot;, lastName:&quot;Doe&quot;},
+    {firstName:&quot;Anna&quot;, lastName:&quot;Smith&quot;},
+    {firstName:&quot;Peter&quot;, lastName:&quot;Jones&quot;}
+  ]
+}
+
+let text = JSON.stringify(obj);</code></pre>
+      </section>
+
+      <footer>
+        <section>
+          <cite id="cite1">Some explanation from <a href="https://www.w3schools.com/">https://www.w3schools.com</a></cite>
+        </section>
+      </footer>
+    </article>
+  </main>
+  <a id="back-to-top" href="#top"></a>
+  <div id="play-game-prompt" hidden>
+    <div>
+      <p>Do you want to play a "catch me 10 times" game?</p>
+    </div>
+    <div>
+      <button id="btn-yes">Yes</button>
+      <button id="btn-no">No</button>
+    </div>
+  </div>
+  <div id="game-over-message" hidden>
+    <div>
+      <p id="message"></p>
+    </div>
+    <div>
+      <button id="btn-ok">OK</button>
+    </div>
+  </div>
+</body>
+</html>

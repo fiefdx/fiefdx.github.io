@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Development Tutorials</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/css-js.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="js/script.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+<body>
+  <header id="top">
+    <h1>Web Development Tutorials</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">HTML Cheat Sheet</a></li>
+        <li class="selected"><a href="css.html">CSS Cheat Sheet</a></li>
+        <li><a href="js.html">JS Cheat Sheet</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <header>
+      <section>
+        <h1>CSS Cheat Sheet</h1>
+        <h2>for beginners</h2>
+        <div class="author">
+          <h3>wrote at 2025-04-07 by</h3>
+          <div class="avatar">
+            <img src="image/fiefdx.png">
+            <span>fiefdx</span>
+          <div>
+        </div>
+      </section>
+    </header>
+      
+    <article>
+      <aside id="index">
+        <h2>Content Index</h2>
+        <div class="index">
+          <ol>
+            <li><a href="#introduction"><p>Introduction</p></a></li>
+            <li><a href="#syntax"><p>Syntax</p></a></li>
+            <li><a href="#selectors"><p>Selectors</p></a>
+              <ul>
+                <li><a href="#simple-selectors">Simple selectors</a></li>
+                <li><a href="#combinator-selectors">Combinator selectors</a></li>
+                <li><a href="#pseudo-class-selectors">Pseudo-class selectors</a></li>
+                <li><a href="#attribute-selectors">Attribute selectors</a></li>
+              </ul>
+            </li>
+            <li><a href="#how-to-add-css"><p>How To Add CSS</p></a>
+              <ul>
+                <li><a href="#external-css">External CSS</a></li>
+                <li><a href="#internal-css">Internal CSS</a></li>
+                <li><a href="#inline-css">Inline CSS</a></li>
+                <li><a href="#cascading-order">Cascading Order</a></li>
+              </ul>
+            </li>
+            <li><a href="#comments"><p>Comments</p></a></li>
+            <li><a href="#colors"><p>Colors</p></a>
+              <ul>
+                <li><a href="#color-names">Color Names</a></li>
+                <li><a href="#rgb">RGB</a></li>
+                <li><a href="#hexadecimal">Hexadecimal</a></li>
+                <li><a href="#hsl">HSL</a></li>
+              </ul>
+            </li>
+            <li><a href="#background"><p>Background</p></a>
+              <ul>
+                <li><a href="#background-color">Background Color</a></li>
+                <li><a href="#background-image">Background Image</a></li>
+                <li><a href="#background-repeat">Background Repeat</a></li>
+              </ul>
+            </li>
+            <li><a href="#borders"><p>Borders</p></a>
+              <ul>
+                <li><a href="#border-width">Border Width</a></li>
+                <li><a href="#border-color">Border Color</a></li>
+                <li><a href="#border-sides">Border Sides</a></li>
+                <li><a href="#border-shorthand">Border Shorthand</a></li>
+                <li><a href="#rounded-borders">Rounded Borders</a></li>
+              </ul>
+            </li>
+            <li><a href="#margins"><p>Margins</p></a></li>
+            <li><a href="#padding"><p>Padding</p></a></li>
+            <li><a href="#height-width"><p>Height/Width</p></a></li>
+            <li><a href="#text"><p>Text</p></a>
+              <ul>
+                <li><a href="#text-color">Text Color</a></li>
+                <li><a href="#text-alignment">Text Alignment</a></li>
+                <li><a href="#text-shadow">Text Shadow</a></li>
+              </ul>
+            </li>
+            <li><a href="#fonts"><p>Fonts</p></a>
+              <ul>
+                <li><a href="#font-web-safe">Font Web Safe</a></li>
+                <li><a href="#font-size">Font Size</a></li>
+              </ul>
+            </li>
+            <li><a href="#display"><p>Display</p></a></li>
+            <li><a href="#position"><p>Position</p></a></li>
+          </ol>
+        </div>
+      </aside>
+
+      <section id="introduction">
+        <h2>Introduction</h2>
+        <p>CSS stands for Cascading Style Sheets.</p>
+        <p>CSS describes how HTML elements are to be displayed on screen.</p>
+        <p>Advantages:</p>
+        <ul>
+          <li>Powerful - can control the layout of multiple pages all at once.</li>
+          <li>Efficient - CSS can change the look of a website by just changing the CSS.</li>
+          <li>Organized - content (HTML) is separated from design (CSS).</li>
+        </ul>
+      </section>
+
+      <section id="syntax">
+        <h2>Syntax</h2>
+        <p>A CSS rule consists of a selector and a declaration block.</p>
+        <p><img id="css-selector" src="image/css_selector.gif"></p>
+        <p>The selector points to the HTML element you want to style.</p>
+        <p>The declaration block contains one or more declarations separated by semicolons.</p>
+        <p>Each declaration includes a CSS property name and a value, separated by a colon.</p>
+        <p>Multiple CSS declarations are separated with semicolons, and declaration blocks are surrounded by curly braces.</p>
+        <pre><code class='language-css' lang='css'>p {
+  color: red;
+  text-align: center;
+}</code></pre>
+        <p>All <code>&lt;p&gt;</code> elements will be centre-aligned, with a red text color.</p>
+        <p><code>p</code> is a selector in CSS (it points to the HTML element you want to style: <code>&lt;p&gt;</code>).</p>
+        <p><code>color</code> is a property, and red is the property value.</p>
+        <p><code>Text-align</code> is a property, and centre is the property value.</p>
+      </section>
+
+      <section id="selectors">
+        <h2>Selectors</h2>
+        <h3 id="simple-selectors">Simple selectors</h3>
+        <h4>Element Selector</h4>
+        <p>The element selector selects HTML elements based on the element name.</p>
+        <pre><code class='language-css' lang='css'>p {
+  text-align: center;
+  color: green;
+}</code></pre>
+        <h4>Id Selector</h4>
+        <p>The id selector uses the id attribute of an HTML element to select a specific element.</p>
+        <p>To select an element with a specific id, write a hash (#) character, followed by the id of the element.</p>
+        <pre><code class='language-css' lang='css'>#header {
+  text-align: center;
+  color: red;
+}
+
+nav#header {
+  text-align: center;
+  color: red;
+}</code></pre>
+        <h4>Class Selector</h4>
+        <p>The class selector selects HTML elements with a specific class attribute.</p>
+        <p>To select elements with a specific class, write a period (.) character, followed by the class name.</p>
+        <pre><code class='language-css' lang='css'>.center {
+  text-align: center;
+  color: blue;
+}
+
+div.center {
+  text-align: center;
+  color: blue;
+}</code></pre>
+        <h4>Universal Selector</h4>
+        <p>The universal selector (*) selects all HTML elements on the page.</p>
+        <pre><code class='language-css' lang='css'>* {
+  margin: 0;
+}</code></pre>
+        <h4>Grouping Selector</h4>
+        <p>The grouping selector selects all the HTML elements with the same style definitions.</p>
+        <pre><code class='language-css' lang='css'>h1, h2, p {
+  text-align: center;
+  color: green;
+}</code></pre>
+        <h3 id="combinator-selectors">Combinator Selectors</h3>
+        <p>There are four different combinators in CSS:</p>
+        <ul>
+          <li>Descendant combinator (space)</li>
+          <li>Child combinator (&gt;)</li>
+          <li>Next sibling combinator (+)</li>
+          <li>Subsequent-sibling combinator (~)</li>
+        </ul>
+        <h4>Descendant Combinator</h4>
+        <p>The descendant combinator matches all elements that are descendants of a specified element.</p>
+        <pre><code class='language-css' lang='css'>div p {
+  background-color: red;
+}</code></pre>
+        <h4>Child Combinator</h4>
+        <p>The child combinator selects all elements that are the children of a specified element.</p>
+        <pre><code class='language-css' lang='css'>div &gt; p {
+  background-color: red;
+}</code></pre>
+        <h4>Next Sibling Combinator</h4>
+        <p>The next sibling combinator is used to select an element that is directly after another specific element.</p>
+        <pre><code class='language-css' lang='css'>div + p {
+  background-color: red;
+}</code></pre>
+        <h4>Subsequent-sibling Combinator</h4>
+        <p>The subsequent-sibling combinator selects all elements that are next siblings of a specified element.</p>
+        <pre><code class='language-css' lang='css'>div ~ p {
+  background-color: red;
+}</code></pre>
+        <h3 id="pseudo-class-selectors">Pseudo-class selectors</h3>
+        <p>A pseudo-class is used to define a special state of an element.</p>
+        <p>The syntax of pseudo-classes:</p>
+        <pre><code class='language-css' lang='css'>selector:pseudo-class {
+  property: value;
+}</code></pre>
+        <h4>Anchor Pseudo-classes</h4>
+        <pre><code class='language-css' lang='css'>/* unvisited link */
+a:link {
+  color: #FF0000;
+}
+
+/* visited link */
+a:visited {
+  color: #00FF00;
+}
+
+/* mouse over link */
+a:hover {
+  color: #FF00FF;
+}
+
+/* selected link */
+a:active {
+  color: #0000FF;
+}</code></pre>
+        <h4>Pseudo-classes and HTML Classes</h4>
+        <pre><code class='language-css' lang='css'>a.highlight:hover {
+  color: #ff0000;
+}
+
+div:hover {
+  background-color: blue;
+}</code></pre>
+        <h4>The :first-child Pseudo-class</h4>
+        <p>The <code>:first-child</code> pseudo-class matches a specified element that is the first child of another element.</p>
+        <pre><code class='language-css' lang='css'>p:first-child {
+  color: red;
+}
+
+p i:first-child {
+  color: red;
+}
+
+p:first-child i {
+  color: red;
+}</code></pre>
+        <h3 id="attribute-selectors">Attribute selectors</h3>
+        <p>The attribute selector is used to select elements with a specified attribute.</p>
+        <pre><code class='language-css' lang='css'>a[target] {
+  background-color: red;
+}
+
+/* select elements with a specified attribute and value */
+a[target=&quot;_blank&quot;] {
+  background-color: red;
+}
+
+/* select elements with an attribute value containing a specified word */
+[title~=&quot;flower&quot;] {
+  border: 5px solid yellow;
+}
+
+/* selements with the specified attribute, whose value can be exactly the specified value, or the specified value followed by a hyphen (-) */
+[class|=&quot;top&quot;] {
+  background: yellow;
+}
+
+/* select elements with the specified attribute, whose value starts with the specified value */
+[class^=&quot;top&quot;] {
+  background: yellow;
+}
+
+/* select elements whose attribute value ends with a specified value */
+[class$=&quot;test&quot;] {
+  background: yellow;
+}
+
+/* select elements whose attribute value contains a specified value */
+[class*=&quot;te&quot;] {
+  background: yellow;
+}
+
+/* The attribute selectors can be useful for styling forms without class or ID */
+input[type=&quot;text&quot;] {
+  width: 150px;
+  display: block;
+  margin-bottom: 10px;
+  background-color: yellow;
+}</code></pre>
+      </section>
+
+      <section id="how-to-add-css">
+        <h2>How To Add CSS</h2>
+        <p>There are three ways of inserting a style sheet:</p>
+        <ul>
+          <li>External CSS</li>
+          <li>Internal CSS</li>
+          <li>Inline CSS</li>
+        </ul>
+        <p>If some properties have been defined for the same selector (element) in different style sheets, the value from the last read style sheet will be used. </p>
+        <h3 id="external-css">External CSS</h3>
+        <p>With an external style sheet, you can change the look of an entire website by changing just one file!</p>
+        <pre><code class='language-html' lang='html'>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;mystyle.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;This is a heading&lt;/h1&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <p>mystyle.css:</p>
+        <pre><code class='language-css' lang='css'>body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: navy;
+  margin-left: 20px;
+}</code></pre>
+        <h3 id="internal-css">Internal CSS</h3>
+        <p>An internal style sheet may be used if one single HTML page has a unique style.</p>
+        <pre><code class='language-html' lang='html'>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+body {
+  background-color: linen;
+}
+
+h1 {
+  color: maroon;
+  margin-left: 40px;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;This is a heading&lt;/h1&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <h3 id="inline-css">Inline CSS</h3>
+        <p>An inline style may be used to apply a unique style for a single element.</p>
+        <pre><code class='language-html' lang='html'>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h1 style=&quot;color:blue;text-align:center;&quot;&gt;This is a heading&lt;/h1&gt;
+&lt;p style=&quot;color:red;&quot;&gt;This is a paragraph.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <h3 id="cascading-order">Cascading Order</h3>
+        <p>All the styles in a page will &quot;cascade&quot; into a new &quot;virtual&quot; style sheet by the following rules, where number one has the highest priority:</p>
+        <ol>
+          <li>Inline style (inside an HTML element)</li>
+          <li>External and internal style sheets (in the head section)</li>
+          <li>Browser default</li>
+        </ol>
+      </section>
+
+      <section id="comments">
+        <h2>Comments</h2>
+        <p>Comments are used to explain the code, and may help when you edit the source code at a later date.</p>
+        <pre><code class='language-css' lang='css'>/* This is a single-line comment */
+p {
+  color: red;
+}
+
+p {
+  color: red;  /* Set text color to red */
+}
+
+/* This is
+a multi-line
+comment */
+
+p {
+  color: red;
+}</code></pre>
+      </section>
+
+      <section id="colors">
+        <h2>Colors</h2>
+        <h3 id="color-names">Color Names</h3>
+        <p>red, green, blue, back, white, grey, brown, pink, navy, orange, yellow, purple, silver, snow, ... </p>
+        <pre><code class='language-css' lang='css'>p {
+  color: red;
+}</code></pre>
+        <h3 id="rgb">RGB</h3>
+        <pre><code class='language-css' lang='css'>p {
+  color: rgb(255, 0, 0);
+}
+
+p {
+  color: rgba(255, 0, 0, 0.5);
+}</code></pre>
+        <h3 id="hexadecimal">Hexadecimal</h3>
+        <pre><code class='language-css' lang='css'>p {
+  color: #ff0000;
+}
+
+p {
+  color: #f00;
+}</code></pre>
+        <h3 id="hsl">HSL</h3>
+        <pre><code class='language-css' lang='css'>p {
+  color: hsl(0, 100%, 50%);
+}
+
+p {
+  color: hsla(0, 100%, 50%, 0.5);
+}</code></pre>
+      </section>
+
+      <section id="background">
+        <h2>Background</h2>
+        <p>The CSS background properties are used to add background effects for elements.</p>
+        <h3 id="background-color">Background Color</h3>
+        <p>The <code>background-color</code> property specifies the background color of an element.</p>
+        <pre><code class='language-css' lang='css'>body {
+  background-color: lightblue;
+}
+
+h1 {
+  background-color: green;
+}
+
+div {
+  background-color: lightblue;
+  opacity: 0.3;
+}
+
+p {
+  background-color: yellow;
+  opacity: 0.3;
+}</code></pre>
+        <h3 id="background-image">Background Image</h3>
+        <p>The <code>background-image</code> property specifies an image to use as the background of an element.</p>
+        <pre><code class='language-css' lang='css'>body {
+  background-image: url(&quot;paper.jpg&quot;);
+}</code></pre>
+        <h3 id="background-repeat">Background Repeat</h3>
+        <p>By default, the <code>background-image</code> property repeats an image both horizontally and vertically.</p>
+        <pre><code class='language-css' lang='css'>body {
+  background-image: url(&quot;gradient_bg.png&quot;);
+  background-repeat: repeat-x;
+}
+
+body {
+  background-image: url(&quot;gradient_bg.png&quot;);
+  background-repeat: repeat-y;
+}
+
+/* Show the background image only once */
+body {
+  background-image: url(&quot;img_tree.png&quot;);
+  background-repeat: no-repeat;
+}</code></pre>
+        <p>The <code>background-position</code> property is used to specify the position of the background image.</p>
+        <pre><code class='language-css' lang='css'>body {
+  background-image: url(&quot;img_tree.png&quot;);
+  background-repeat: no-repeat;
+  background-position: right top;
+}</code></pre>
+      </section>
+
+      <section id="borders">
+        <h2>Borders</h2>
+        <p>The CSS border properties allow you to specify the style, width, and color of an element&#39;s border.</p>
+        <p>The <code>border-style</code> property specifies what kind of border to display.</p>
+        <ul>
+          <li><code>dotted</code> - Defines a dotted border</li>
+          <li><code>dashed</code> - Defines a dashed border</li>
+          <li><code>solid</code> - Defines a solid border</li>
+          <li><code>double</code> - Defines a double border</li>
+          <li><code>groove</code> - Defines a 3D grooved border. The effect depends on the border-color value</li>
+          <li><code>ridge</code> - Defines a 3D ridged border. The effect depends on the border-color value</li>
+          <li><code>inset</code> - Defines a 3D inset border. The effect depends on the border-color value</li>
+          <li><code>outset</code> - Defines a 3D outset border. The effect depends on the border-color value</li>
+          <li><code>none</code> - Defines no border</li>
+          <li><code>hidden</code> - Defines a hidden border</li>
+        </ul>
+        <pre><code class='language-css' lang='css'>p.dotted {border-style: dotted;}
+p.dashed {border-style: dashed;}
+p.solid {border-style: solid;}
+p.double {border-style: double;}
+p.groove {border-style: groove;}
+p.ridge {border-style: ridge;}
+p.inset {border-style: inset;}
+p.outset {border-style: outset;}
+p.none {border-style: none;}
+p.hidden {border-style: hidden;}
+p.mix {border-style: dotted dashed solid double;}</code></pre>
+        <h3 id="border-width">Border Width</h3>
+        <p>The <code>border-width</code> property specifies the width of the four borders.</p>
+        <pre><code class='language-css' lang='css'>p.one {
+  border-style: solid;
+  border-width: 5px;
+}
+
+p.two {
+  border-style: solid;
+  border-width: medium;
+}
+
+p.three {
+  border-style: dotted;
+  border-width: 2px;
+}
+
+p.four {
+  border-style: dotted;
+  border-width: thick;
+}
+
+p.one {
+  border-style: solid;
+  border-width: 5px 20px; /* 5px top and bottom, 20px on the sides */
+}
+
+p.two {
+  border-style: solid;
+  border-width: 20px 5px; /* 20px top and bottom, 5px on the sides */
+}
+
+p.three {
+  border-style: solid;
+  border-width: 25px 10px 4px 35px; /* 25px top, 10px right, 4px bottom and 35px left */
+}</code></pre>
+        <h3 id="border-color">Border Color</h3>
+        <p>The <code>border-color</code> property is used to set the color of the four borders.</p>
+        <pre><code class='language-css' lang='css'>p {
+  border-style: solid;
+  border-color: red;
+}
+
+p {
+  border-style: solid;
+  border-color: red green blue yellow; /* red top, green right, blue bottom and yellow left */
+}</code></pre>
+        <h3 id="border-sides">Border Sides</h3>
+        <p>In CSS, there are also properties for specifying each of the borders (top, right, bottom, and left).</p>
+        <pre><code class='language-css' lang='css'>p {
+  border-top-style: dotted;
+  border-right-style: solid;
+  border-bottom-style: dotted;
+  border-left-style: solid;
+}</code></pre>
+        <h3 id="border-shorthand">Border Shorthand</h3>
+        <p>The <code>border</code> property is a shorthand property for the following individual border properties:</p>
+        <ul>
+          <li><code>border-width</code></li>
+          <li><code>border-style</code> (required)</li>
+          <li><code>border-color</code></li>
+        </ul>
+        <pre><code class='language-css' lang='css'>p {
+  border: 5px solid red;
+}</code></pre>
+        <h3 id="rounded-borders">Rounded Borders</h3>
+        <p>The <code>border-radius</code> property is used to add rounded borders to an element.</p>
+        <pre><code class='language-css' lang='css'>p {
+  border: 2px solid red;
+  border-radius: 5px;
+}</code></pre>
+      </section>
+
+      <section id="margins">
+        <h2>Margins</h2>
+        <p>The CSS <code>margin</code> properties are used to create space around elements, outside of any defined borders.</p>
+        <pre><code class='language-css' lang='css'>p {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
+}
+
+p {
+  margin: 25px 50px 75px 100px; /* top right bottom left */
+}
+
+p {
+  margin: 25px 50px 75px; /* top left&amp;right bottom */
+}
+
+p {
+  margin: 25px 50px; /* top&amp;bottom left&amp;right */
+}
+
+p {
+  margin: 25px; /* all */
+}</code></pre>
+      </section>
+
+      <section id="padding">
+        <h2>Padding</h2>
+        <p>The CSS <code>padding</code> properties are used to generate space around an element&#39;s content, inside of any defined borders.</p>
+        <pre><code class='language-css' lang='css'>div {
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+}
+
+div {
+  padding: 25px 50px 75px 100px; /* top right bottom left */
+}
+
+div {
+  padding: 25px 50px 75px; /* top left&amp;right bottom */
+}
+
+div {
+  padding: 25px 50px; /* top&amp;bottom left&amp;right */
+}
+
+div {
+  padding: 25px; /* all */
+}</code></pre>
+      </section>
+
+      <section id="height-width">
+        <h2>Height/Width</h2>
+        <p>The <code>height</code> and <code>width</code> properties are used to set the height and width of an element.</p>
+        <p>The <code>max-width</code> and <code>min-width</code> property are used to set the maximum and minimum width of an element.</p>
+        <p>The <code>max-height</code> and <code>min-height</code> property are used to set the maximum and minimum height of an element.</p>
+        <pre><code class='language-css' lang='css'>div {
+  height: 200px;
+  width: 50%;
+  background-color: powderblue;
+}</code></pre>
+      </section>
+
+      <section id="text">
+        <h2>Text</h2>
+        <h3 id="text-color">Text Color</h3>
+        <p>The <code>color</code> property is used to set the color of the text.</p>
+        <pre><code class='language-css' lang='css'>body {
+  color: blue;
+}
+
+h1 {
+  color: green;
+}</code></pre>
+        <h3 id="text-alignment">Text Alignment</h3>
+        <p>The <code>text-align</code> property is used to set the horizontal alignment of a text.</p>
+        <pre><code class='language-css' lang='css'>h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: left;
+}
+
+h3 {
+  text-align: right;
+}
+
+div {
+  text-align: justify; /* each line is stretched so that every line has equal width, and the left and right margins are straight */
+}</code></pre>
+        <p>The <code>text-align-last</code> property specifies how to align the last line of a text.</p>
+        <pre><code class='language-css' lang='css'>p.a {
+  text-align-last: right;
+}
+
+p.b {
+  text-align-last: center;
+}
+
+p.c {
+  text-align-last: justify;
+}</code></pre>
+        <p>The <code>vertical-align</code> property sets the vertical alignment of an element.</p>
+        <pre><code class='language-css' lang='css'>img.a {
+  vertical-align: baseline;
+}
+
+img.b {
+  vertical-align: text-top;
+}
+
+img.c {
+  vertical-align: text-bottom;
+}
+
+img.d {
+  vertical-align: sub;
+}
+
+img.e {
+  vertical-align: super;
+}</code></pre>
+        <h3 id="text-shadow">Text Shadow</h3>
+        <p>The <code>text-shadow</code> property adds shadow to text.</p>
+        <pre><code class='language-css' lang='css'>h1 {
+  text-shadow: 2px 2px; /* the horizontal shadow (2px) and the vertical shadow (2px) */
+}
+
+h1 {
+  text-shadow: 2px 2px red; /* add a color (red) to the shadow */
+}
+
+h1 {
+  text-shadow: 2px 2px 5px red; /* add a blur effect (5px) to the shadow */
+}</code></pre>
+      </section>
+
+      <section id="fonts">
+        <h2>Fonts</h2>
+        <p>The <code>font-family</code> property to specify the font of a text.</p>
+        <pre><code class='language-css' lang='css'>.p1 {
+  font-family: &quot;Times New Roman&quot;, Times, serif;
+}
+
+.p2 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.p3 {
+  font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+}</code></pre>
+        <h3 id="font-web-safe">Font Web Safe</h3>
+        <p>Web safe fonts are fonts that are universally installed across all browsers and devices.</p>
+        <ul>
+          <li>Arial (sans-serif)</li>
+          <li>Verdana (sans-serif)</li>
+          <li>Tahoma (sans-serif)</li>
+          <li>Trebuchet MS (sans-serif)</li>
+          <li>Times New Roman (serif)</li>
+          <li>Georgia (serif)</li>
+          <li>Garamond (serif)</li>
+          <li>Courier New (monospace)</li>
+          <li>Brush Script MT (cursive)</li>
+        </ul>
+        <h3 id="font-size">Font Size</h3>
+        <p>The <code>font-size</code> property sets the size of the text.</p>
+        <pre><code class='language-css' lang='css'>h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+p {
+  font-size: 14px;
+}
+
+h1 {
+  font-size: 2.5em; /* 40px/16=2.5em */
+}
+
+h2 {
+  font-size: 1.875em; /* 30px/16=1.875em */
+}
+
+p {
+  font-size: 0.875em; /* 14px/16=0.875em */
+}</code></pre>
+      </section>
+
+      <section id="display">
+        <h2>Display</h2>
+        <p>The <code>display</code> property is used to specify how an element is shown on a web page.</p>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>Value</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>inline</td>
+                <td>Displays an element as an inline element</td>
+              </tr>
+              <tr>
+                <td>block</td>
+                <td>Displays an element as a block element</td>
+              </tr>
+              <tr>
+                <td>contents</td>
+                <td>Makes the container disappear, making the child elements children of the element the next level up in the DOM</td>
+              </tr>
+              <tr>
+                <td>flex</td>
+                <td>Displays an element as a block-level flex container</td>
+              </tr>
+              <tr>
+                <td>grid</td>
+                <td>Displays an element as a block-level grid container</td>
+              </tr>
+              <tr>
+                <td>inline-block</td>
+                <td>Displays an element as an inline-level block container. The element itself is formatted as an inline element, but you can apply height and width values</td>
+              </tr>
+              <tr>
+                <td>inline-flex</td>
+                <td>Displays an element as an inline-level flex container</td>
+              </tr>
+              <tr>
+                <td>inline-grid</td>
+                <td>Displays an element as an inline-level grid container</td>
+              </tr>
+              <tr>
+                <td>none</td>
+                <td>The element is completely removed</td>
+              </tr>
+              <tr>
+                <td>initial</td>
+                <td>Sets this property to its default value</td>
+              </tr>
+              <tr>
+                <td>inherit</td>
+                <td>Inherits this property from its parent element</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="position">
+        <h2>Position</h2>
+        <p>The <code>position</code> property specifies the type of positioning method used for an element.</p>
+        <pre><code class='language-css' lang='css'>div.static {
+  position: static; /* it is always positioned according to the normal flow of the page */
+  border: 3px solid #73AD21;
+}
+
+div.relative {
+  position: relative; /* is positioned relative to its normal position */
+  left: 30px;
+  border: 3px solid #73AD21;
+}
+
+div.fixed {
+  position: fixed; /* is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled */
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  border: 3px solid #73AD21;
+}
+
+div.absolute {
+  position: absolute; /* is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed) */
+  top: 80px;
+  right: 0;
+  width: 200px;
+  height: 100px;
+  border: 3px solid #73AD21;
+}
+
+div.sticky {
+  position: sticky; /* is positioned based on the user&#39;s scroll position. */
+  top: 0;
+  background-color: green;
+  border: 2px solid #4CAF50;
+}</code></pre>
+      </section>
+
+      <footer>
+        <section>
+          <cite id="cite1">Some explanation from <a href="https://www.w3schools.com/">https://www.w3schools.com</a></cite>
+        </section>
+      </footer>
+    </article>
+  </main>
+  <a id="back-to-top" href="#top"></a>
+  <div id="play-game-prompt" hidden>
+    <div>
+      <p>Do you want to play a "catch me 10 times" game?</p>
+    </div>
+    <div>
+      <button id="btn-yes">Yes</button>
+      <button id="btn-no">No</button>
+    </div>
+  </div>
+  <div id="game-over-message" hidden>
+    <div>
+      <p id="message"></p>
+    </div>
+    <div>
+      <button id="btn-ok">OK</button>
+    </div>
+  </div>
+</body>
+</html>
