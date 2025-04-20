@@ -8,3 +8,8 @@ main > header {
     justify-content: center;
     align-items: center;
 }
+
+table#table-bitwise-operators td,th {
+	word-wrap: break-word;
+	word-break: break-all;
+}

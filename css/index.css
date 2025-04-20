@@ -40,7 +40,7 @@ body {
     flex-direction: column;
     font-family: Yantramanav;
     color: rgb(var(--grey));
-    min-width: 500px; /* page min-width */
+    min-width: 360px; /* page min-width */
 }
 
 h1,
@@ -300,8 +300,8 @@ a#back-to-top {
     background-image: url("../image/top-trans.png");
     background-size: cover;
     background-position: center;
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     top: var(--bottom);
     left: var(--right);
     position: fixed;
@@ -325,8 +325,8 @@ a#back-to-top:hover {
 div#play-game-prompt,div#game-over-message {
     width: 250px;
     height: 75px;
-    top: calc(var(--bottom) - 80px);
-    left: calc(var(--right) - 180px);
+    top: calc(var(--bottom) - 70px);
+    left: calc(var(--right) - 170px);
     position: fixed;
     background-color: rgb(var(--light-grey));
     border-radius: 5px;
@@ -348,6 +348,21 @@ div#game-over-message div {
 
 /* for extra small screens fix the page width as 350px */
 @media all and (min-width: 0px) {
+    header > section > h1 {
+        margin-top: 20px;
+        font-size: 2.0em;
+    }
+
+    header > section > h2 {
+        font-size: 1.5em;
+        font-weight: 500;
+    }
+
+    header > section h3 {
+        font-size: 1.0em;
+        font-weight: 500;
+    }
+
     article > aside {
         width: 100%;
     }
@@ -368,12 +383,12 @@ div#game-over-message div {
 
     a#back-to-top {
         top: calc(var(--bottom) + 20px);
-        left: calc(var(--right) + 20px);
+        left: calc(var(--right) + 30px);
     }
 }
 
 /* for small screens */
-@media all and (min-width: 500px) {
+@media all and (min-width: 360px) {
     article > aside {
         width: 100%;
     }
@@ -394,7 +409,7 @@ div#game-over-message div {
 
     a#back-to-top {
         top: calc(var(--bottom) + 20px);
-        left: calc(var(--right) + 20px);
+        left: calc(var(--right) + 30px);
     }
 }
 
@@ -421,7 +436,7 @@ div#game-over-message div {
     }
 
     a#back-to-top {
-        top: var(--bottom);
+        top: calc(var(--bottom) + 20px);
         left: var(--right);
     }
 }

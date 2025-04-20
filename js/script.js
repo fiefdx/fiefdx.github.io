@@ -86,15 +86,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const topButton = document.getElementById("back-to-top");
 
     topButton.addEventListener("mouseover", function (event) {
-        if (!game.isStart && !game.gameStart) {
-            game.isStart = true;
-            game.startAt = new Date();
-            game.timer = setInterval(game.checkMouse, 200);
-        } else if (game.gameStart) {
-            game.newPose();
-            game.catchTimes += 1;
-            game.startAt = new Date();
-            game.check();
+        if (!isMobile()) {
+            if (!game.isStart && !game.gameStart) {
+                game.isStart = true;
+                game.startAt = new Date();
+                game.timer = setInterval(game.checkMouse, 200);
+            } else if (game.gameStart) {
+                game.newPose();
+                game.catchTimes += 1;
+                game.startAt = new Date();
+                game.check();
+            }
         }
     });
 
@@ -129,3 +131,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
         prompt.style.display = "none";
     });
 });
+
+function isMobile() {
+    const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+    return regex.test(navigator.userAgent);
+}
